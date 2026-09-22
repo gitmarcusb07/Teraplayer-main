@@ -206,7 +206,7 @@ export default function Home() {
         }
       }
     },
-    [setSearchParams]
+    [setSearchParams, t]
   );
 
   const retry = useCallback(() => {
@@ -272,7 +272,7 @@ export default function Home() {
       }
       setExtRunning(false);
     },
-    [setSearchParams]
+    [setSearchParams, t]
   );
 
   const retryBrowserExtraction = useCallback(() => {
