@@ -702,6 +702,12 @@ export default function Home() {
         )}
         </div>
 
+        {/* Adsterra Native Banner */}
+        <div className="mx-auto w-full max-w-3xl overflow-hidden px-4 text-center sm:px-6">
+          <script async="async" data-cfasync="false" src="https://pl31458283.profitableratecpmnetwork.com/7e3f1640408748e6223c4a07caa45c1e/invoke.js"></script>
+          <div id="container-7e3f1640408748e6223c4a07caa45c1e"></div>
+        </div>
+
         {/* Intro paragraph — centered gray, like the reference. */}
         <section aria-label={t("explore.aboutTp")} className="mx-auto mt-8 max-w-3xl px-4 sm:px-6">
           <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-slate-500 sm:text-[15px]">
