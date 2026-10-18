@@ -40,6 +40,7 @@ import {
 } from "lucide-react";
 import Header from "../components/Header";
 import FaqCards from "../components/FaqCards";
+import AdsSection from "../components/AdsSection";
 import { Button } from "../components/ui/button";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -690,6 +691,8 @@ export default function HelpCenter() {
           </div>
         </section>
       </main>
+
+      <AdsSection />
 
       {/* Disclaimer */}
       <footer className="border-t border-slate-200 bg-white py-8">

@@ -192,6 +192,13 @@ async function main() {
   try {
     for (const route of ROUTES) {
       const page = await browser.newPage();
+      // Keep ads out of the prerendered snapshots (see
+      // frontend/src/components/AdsSection.jsx): the saved HTML stays clean
+      // and the strict networkidle0 wait is never blocked by third-party ad
+      // requests. Real visitors still get every ad after hydration.
+      await page.evaluateOnNewDocument(() => {
+        window.__TP_PRERENDER__ = true;
+      });
       await page.setViewport({ width: 1366, height: 900 });
       await page.goto(`http://127.0.0.1:${port}${route}`, {
         waitUntil: "networkidle0",
@@ -211,6 +218,16 @@ async function main() {
         window.scrollTo(0, 0);
       });
       await sleep(1500);
+      // Defensive sweep: even if a third-party ad tag somehow executes during
+      // prerender, it must never be serialized into the static snapshot (it
+      // would then run unconditionally for every visitor, including /admin).
+      await page.evaluate(() => {
+        document
+          .querySelectorAll(
+            'script[src*="biomanos.org"], script[src*="profitableratecpmnetwork.com"], script[src*="highperformanceformat.com"]'
+          )
+          .forEach((s) => s.remove());
+      });
       const html = await page.evaluate(
         () => "<!doctype html>\n" + document.documentElement.outerHTML
       );

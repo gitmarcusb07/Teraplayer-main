@@ -1,6 +1,8 @@
 export default {
   "skip.link": "Skip to content",
 
+  "ad.label": "Advertisement",
+
   "nav.video": "Video",
   "nav.downloader": "Downloader",
   "nav.help": "Help",

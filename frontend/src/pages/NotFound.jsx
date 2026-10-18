@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import AdsSection from "../components/AdsSection";
 import { Button } from "../components/ui/button";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -93,6 +94,8 @@ export default function NotFound() {
           </motion.div>
         </section>
       </main>
+
+      <AdsSection />
 
       <Footer />
     </div>

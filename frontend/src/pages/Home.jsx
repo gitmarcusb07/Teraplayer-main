@@ -28,6 +28,7 @@ import FolderBrowser from "../components/FolderBrowser";
 import ExtensionStatus from "../components/ExtensionStatus";
 import ExtractionStatus from "../components/ExtractionStatus";
 import ExtractionError from "../components/ExtractionError";
+import AdsSection from "../components/AdsSection";
 import { Button } from "../components/ui/button";
 
 import {
@@ -702,12 +703,6 @@ export default function Home() {
         )}
         </div>
 
-        {/* Adsterra Native Banner */}
-        <div className="mx-auto w-full max-w-3xl overflow-hidden px-4 text-center sm:px-6">
-          <script async="async" data-cfasync="false" src="https://pl31458283.profitableratecpmnetwork.com/7e3f1640408748e6223c4a07caa45c1e/invoke.js"></script>
-          <div id="container-7e3f1640408748e6223c4a07caa45c1e"></div>
-        </div>
-
         {/* Intro paragraph — centered gray, like the reference. */}
         <section aria-label={t("explore.aboutTp")} className="mx-auto mt-8 max-w-3xl px-4 sm:px-6">
           <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-slate-500 sm:text-[15px]">
@@ -960,6 +955,8 @@ export default function Home() {
           </ul>
         </section>
       </main>
+
+      <AdsSection />
 
       <footer className="mt-16 border-t border-slate-200 bg-white py-6 sm:py-8 md:mt-24">
         <div className="ds-container">

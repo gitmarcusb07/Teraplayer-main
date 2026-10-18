@@ -19,6 +19,7 @@ import {
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import AdsSection from "../components/AdsSection";
 import LegalNotice from "../components/LegalNotice";
 import { useLang } from "../i18n/LanguageContext";
 import { Button } from "../components/ui/button";
@@ -257,6 +258,8 @@ export default function TermsOfService() {
           </div>
         </section>
       </main>
+
+      <AdsSection />
 
       <Footer />
     </div>
