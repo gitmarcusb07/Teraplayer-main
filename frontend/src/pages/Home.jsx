@@ -28,7 +28,7 @@ import FolderBrowser from "../components/FolderBrowser";
 import ExtensionStatus from "../components/ExtensionStatus";
 import ExtractionStatus from "../components/ExtractionStatus";
 import ExtractionError from "../components/ExtractionError";
-import AdsSection from "../components/AdsSection";
+import AdsSection, { AdTopBanner } from "../components/AdsSection";
 import { Button } from "../components/ui/button";
 
 import {
@@ -479,6 +479,7 @@ export default function Home() {
       <Header />
 
       <main id="main">
+        <AdTopBanner />
         {/* Hero — reference-style: glow, gradient headline, gray subhead, pill input. */}
         <div className="relative overflow-hidden">
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-full max-w-3xl -translate-x-1/2 rounded-full bg-indigo-500/10 blur-[120px]" />

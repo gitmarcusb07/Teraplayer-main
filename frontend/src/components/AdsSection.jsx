@@ -34,6 +34,16 @@ import { useLang } from "../i18n/LanguageContext";
  *    monetized popunder-style instead: the visitor's first click anywhere on
  *    the page opens the Smartlink in a background tab — at most once per
  *    browser session.
+ *
+ * ── Where the units are mounted ───────────────────────────────────────────
+ *
+ * Every public page mounts two ad bands: AdTopBanner (one leaderboard-sized
+ * unit above the content — 728x90 on wide screens, 468x60 on tablets, 320x50
+ * on phones) and AdsSection (300x250 + 160x600 + 160x300 + native banner
+ * before the footer, plus the 468x60 and 320x50 units on screens where the
+ * top band does not use them). Each unit key therefore appears exactly once
+ * per page and viewport — ad networks dislike duplicate units in one
+ * pageview, and a repeated unit would just show the same creative twice.
  */
 
 const BANNER_SCRIPT_BASE = "https://biomanos.org/22";
@@ -46,24 +56,25 @@ const NATIVE_BANNER_SRC = `https://pl31458283.profitableratecpmnetwork.com/${NAT
 const SMARTLINK_URL = "https://apiguinee.org/4/033b3676a345598e143ebf324be3b6d8";
 const SMARTLINK_SESSION_KEY = "tp-smartlink-clicked";
 
-// The six banner units (iframe format). Fixed-size creatives that cannot fit
-// a phone screen are hidden at those breakpoints so the page never scrolls
-// sideways; they appear again on wider screens. Hidden units are also never
-// loaded — ad networks dislike impressions for creatives that are not visible.
-const BANNER_UNITS = [
-  // 728x90 leaderboard
-  { adKey: "ae944b37ff48da05800207d1bbd0af34", width: 728, height: 90, className: "hidden lg:flex", minWidth: 1024 },
-  // 468x60 banner
-  { adKey: "8bfd02b17bc700167e51120f503b61fa", width: 468, height: 60, className: "hidden sm:flex", minWidth: 640 },
-  // 320x50 mobile leaderboard
-  { adKey: "32c49a42eb1cbda9e8056a5c3c4aec3f", width: 320, height: 50, className: "flex" },
-  // 300x250 medium rectangle
-  { adKey: "44b178d0908b9627f2052780f22aff8a", width: 300, height: 250, className: "flex" },
-  // 160x600 wide skyscraper
-  { adKey: "d9a5e2b2cf7ad55e5d97c7f14f1cfaaa", width: 160, height: 600, className: "flex" },
-  // 160x300 half-page
-  { adKey: "572646baf7134446a75078b7a7c00a10", width: 160, height: 300, className: "flex" },
-];
+// The six banner units (iframe format), keyed by role. Fixed-size creatives
+// that cannot fit a narrow screen are hidden at those breakpoints — and, since
+// ad networks dislike impressions for creatives that are not visible, they are
+// not loaded at all on those screens. See the two bands below for where each
+// unit is mounted.
+const UNITS = {
+  // 728x90 leaderboard — top band, wide screens.
+  leaderboard: { adKey: "ae944b37ff48da05800207d1bbd0af34", width: 728, height: 90 },
+  // 468x60 banner — top band on tablets; bottom section on wide screens.
+  banner: { adKey: "8bfd02b17bc700167e51120f503b61fa", width: 468, height: 60 },
+  // 320x50 mobile leaderboard — top band on phones; bottom section above 640px.
+  mobileLeaderboard: { adKey: "32c49a42eb1cbda9e8056a5c3c4aec3f", width: 320, height: 50 },
+  // 300x250 medium rectangle — bottom section.
+  mediumRectangle: { adKey: "44b178d0908b9627f2052780f22aff8a", width: 300, height: 250 },
+  // 160x600 wide skyscraper — bottom section.
+  wideSkyscraper: { adKey: "d9a5e2b2cf7ad55e5d97c7f14f1cfaaa", width: 160, height: 600 },
+  // 160x300 half-page — bottom section.
+  halfPage: { adKey: "572646baf7134446a75078b7a7c00a10", width: 160, height: 300 },
+};
 
 const SCRIPT_TIMEOUT_MS = 20000;
 
@@ -167,7 +178,7 @@ function injectScript(src, attributes = {}) {
 }
 
 /** One iframe-format banner unit (e.g. 320x50, 728x90, 160x600). */
-export function AdBanner({ adKey, width, height, className, enabled = true }) {
+export function AdBanner({ adKey, width, height, className, enabled = true, placement = "bottom" }) {
   const holderRef = useRef(null);
 
   useEffect(() => {
@@ -207,7 +218,7 @@ export function AdBanner({ adKey, width, height, className, enabled = true }) {
       */}
       <div
         ref={holderRef}
-        id={`tp-ad-${adKey}`}
+        id={`tp-ad-${placement}-${adKey}`}
         style={{ width, height }}
         className="overflow-hidden"
         data-ad-size={`${width}x${height}`}
@@ -243,13 +254,62 @@ function NativeBanner() {
   );
 }
 
+/**
+ * Top banner band — exactly one leaderboard-sized unit above the page
+ * content, right under the site header: 728x90 on wide screens, 468x60 on
+ * tablets, 320x50 on phones. The other two holders stay hidden and unloaded.
+ * Every public page mounts this as the first element of <main>.
+ */
+export function AdTopBanner() {
+  const { t } = useLang();
+  const wideViewport = useMediaQuery("(min-width: 1024px)");
+  const mediumViewport = useMediaQuery("(min-width: 640px)");
+
+  return (
+    <div
+      aria-label="Advertisement"
+      className="mx-auto flex w-full max-w-5xl flex-col items-center overflow-hidden px-2 pt-3 sm:px-6"
+      data-testid="ads-top"
+    >
+      <p className="mb-2 text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/70">
+        {t("ad.label")}
+      </p>
+      <div className="flex justify-center">
+        <AdBanner {...UNITS.leaderboard} placement="top" className="hidden lg:flex" enabled={wideViewport} />
+        <AdBanner
+          {...UNITS.banner}
+          placement="top"
+          className="hidden sm:flex lg:hidden"
+          enabled={mediumViewport && !wideViewport}
+        />
+        <AdBanner
+          {...UNITS.mobileLeaderboard}
+          placement="top"
+          className="flex sm:hidden"
+          enabled={!mediumViewport}
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function AdsSection() {
   const { t } = useLang();
   // Adsterra Smartlink — popunder-style, first click per session (no UI).
   useSmartlinkPopunder();
-  // Units hidden by a breakpoint (see BANNER_UNITS) are not loaded at all.
+  // Units hidden by a breakpoint (see BOTTOM_UNITS) are not loaded at all.
   const wideViewport = useMediaQuery("(min-width: 1024px)");
   const mediumViewport = useMediaQuery("(min-width: 640px)");
+
+  // Bottom band: the 468x60 and 320x50 units only appear here on screens
+  // where the top band shows the 728x90 instead — never twice on one screen.
+  const bottomUnits = [
+    { ...UNITS.banner, className: "hidden lg:flex", minWidth: 1024 },
+    { ...UNITS.mobileLeaderboard, className: "hidden sm:flex", minWidth: 640 },
+    { ...UNITS.mediumRectangle, className: "flex" },
+    { ...UNITS.wideSkyscraper, className: "flex" },
+    { ...UNITS.halfPage, className: "flex" },
+  ];
 
   return (
     <section
@@ -261,10 +321,11 @@ export default function AdsSection() {
         {t("ad.label")}
       </p>
       <div className="flex flex-wrap items-start justify-center gap-4 sm:gap-6">
-        {BANNER_UNITS.map(({ minWidth, ...unit }) => (
+        {bottomUnits.map(({ minWidth, ...unit }) => (
           <AdBanner
             key={unit.adKey}
             {...unit}
+            placement="bottom"
             enabled={!minWidth || (minWidth >= 1024 ? wideViewport : mediumViewport)}
           />
         ))}

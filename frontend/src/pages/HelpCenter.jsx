@@ -40,7 +40,7 @@ import {
 } from "lucide-react";
 import Header from "../components/Header";
 import FaqCards from "../components/FaqCards";
-import AdsSection from "../components/AdsSection";
+import AdsSection, { AdTopBanner } from "../components/AdsSection";
 import { Button } from "../components/ui/button";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -168,6 +168,7 @@ export default function HelpCenter() {
       </Seo>
 
       <main>
+        <AdTopBanner />
         {/* Hero */}
         <section className="relative overflow-hidden">
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-full max-w-3xl -translate-x-1/2 rounded-full bg-indigo-500/10 blur-[120px]" />

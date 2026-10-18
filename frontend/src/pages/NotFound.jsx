@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import AdsSection from "../components/AdsSection";
+import AdsSection, { AdTopBanner } from "../components/AdsSection";
 import { Button } from "../components/ui/button";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -31,6 +31,7 @@ export default function NotFound() {
       />
 
       <main id="main" className="tp-container">
+        <AdTopBanner />
         <section className="relative overflow-hidden py-20 md:py-28">
           <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-full max-w-3xl -translate-x-1/2 rounded-full bg-indigo-500/10 blur-[120px]" />
           <motion.div
