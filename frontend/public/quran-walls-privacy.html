@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110e">
+  <meta name="description" content="Privacy policy for the Quran Walls Android app. Learn what the app stores on your phone and what is processed when it downloads wallpapers." />
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://teraplayer.in/quran-walls-privacy.html">
+  <title>Quran Walls App Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14201b;
+      --muted: #59665f;
+      --deep: #07110e;
+      --deep-2: #10221b;
+      --paper: #f5f2e9;
+      --card: #fffefa;
+      --line: #e2dfd4;
+      --gold: #d8b45c;
+      --mint: #79d7b6;
+      --link: #126149;
+      --shadow: 0 18px 50px rgba(12, 27, 20, .08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); line-height: 1.7; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
+    .hero { position: relative; overflow: hidden; color: #f7f4eb; background: radial-gradient(ellipse at 85% -10%, rgba(95, 216, 180, .18), transparent 40%), linear-gradient(135deg, var(--deep), var(--deep-2)); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -130px; bottom: -240px; border: 1px solid rgba(216, 180, 92, .35); border-radius: 50%; box-shadow: 0 0 0 34px rgba(216,180,92,.035), 0 0 0 68px rgba(216,180,92,.025); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 30px 0 54px; }
+    .brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 64px; }
+    .brand-mark { display: grid; width: 42px; height: 42px; place-items: center; color: var(--gold); border: 1px solid rgba(216,180,92,.45); border-radius: 14px; font-size: 21px; }
+    .brand-name { font-size: 14px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+    .brand-sub { display: block; color: #a8b7ae; font-size: 11px; font-weight: 500; letter-spacing: .02em; text-transform: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--mint); font-size: 12px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 23px; height: 1px; background: var(--gold); }
+    h1 { max-width: 800px; margin: 17px 0 12px; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.04; letter-spacing: -.055em; }
+    .hero-copy { max-width: 700px; margin: 0; color: #c8d1c9; font-size: clamp(1rem, 1.7vw, 1.18rem); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 27px; color: #b6c1b8; font-size: 13px; }
+    .hero-meta strong { color: #f7f4eb; font-weight: 650; }
+    .scope-note { width: min(1120px, calc(100% - 48px)); margin: -24px auto 0; position: relative; z-index: 2; padding: 18px 21px; color: #f8f4e8; background: #173329; border: 1px solid rgba(121,215,182,.26); border-radius: 16px; box-shadow: var(--shadow); font-size: 14px; }
+    .scope-note strong { color: var(--gold); }
+    .layout { display: grid; grid-template-columns: 245px minmax(0, 1fr); gap: 38px; width: min(1120px, calc(100% - 48px)); margin: 42px auto 80px; align-items: start; }
+    .toc { position: sticky; top: 24px; padding: 21px 18px; background: rgba(255,254,250,.8); border: 1px solid var(--line); border-radius: 18px; }
+    .toc h2 { margin: 0 0 12px; color: #6c746d; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+    .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: section; }
+    .toc li { counter-increment: section; }
+    .toc a { display: block; padding: 7px 0; color: #435149; font-size: 13px; line-height: 1.4; text-decoration: none; }
+    .toc a::before { content: counter(section, decimal-leading-zero) "  "; color: #9c813b; font-size: 10px; font-weight: 750; letter-spacing: .05em; }
+    .toc a:hover { color: var(--link); }
+    .content { min-width: 0; }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+    .summary-card { min-height: 112px; padding: 17px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+    .summary-card .symbol { display: block; margin-bottom: 8px; color: #98782c; font-size: 17px; }
+    .summary-card strong { display: block; font-size: 13px; line-height: 1.3; }
+    .summary-card span:last-child { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .policy-section { scroll-margin-top: 24px; margin-bottom: 15px; padding: clamp(21px, 4vw, 31px); background: var(--card); border: 1px solid var(--line); border-radius: 19px; box-shadow: 0 8px 26px rgba(12, 27, 20, .025); }
+    .section-kicker { margin: 0 0 5px; color: #9a7b34; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin: 0 0 12px; font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.3; letter-spacing: -.025em; }
+    p { margin: 10px 0; color: #4f5b54; font-size: 14px; }
+    ul { margin: 10px 0 0; padding-left: 21px; color: #4f5b54; font-size: 14px; }
+    li { padding: 3px 0; }
+    .callout { margin-top: 15px; padding: 14px 16px; color: #254637; background: #edf5ef; border-left: 3px solid #4c9b77; border-radius: 0 12px 12px 0; font-size: 13px; }
+    .contact-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; margin-top: 19px; padding: 20px; color: #f6f3e9; background: linear-gradient(135deg, #10271e, #183d2e); border-radius: 16px; }
+    .contact-card p { margin: 4px 0 0; color: #c4d1c7; font-size: 12px; }
+    .contact-card a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; color: #14201b; background: var(--gold); border-radius: 999px; font-size: 13px; font-weight: 750; text-decoration: none; }
+    footer { padding: 25px 24px 34px; color: #738077; border-top: 1px solid #dedbcf; text-align: center; font-size: 12px; }
+    footer p { margin: 3px; font-size: 12px; }
+    @media (max-width: 760px) {
+      .hero-inner { width: min(100% - 34px, 600px); padding: 22px 0 47px; }
+      .brand-row { margin-bottom: 45px; }
+      .scope-note { width: calc(100% - 34px); padding: 15px 16px; font-size: 13px; }
+      .layout { display: block; width: calc(100% - 34px); margin-top: 25px; }
+      .toc { position: static; margin-bottom: 19px; padding: 16px; }
+      .toc ol { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+      .toc a { font-size: 12px; }
+      .summary { grid-template-columns: 1fr; gap: 8px; }
+      .summary-card { min-height: 0; display: grid; grid-template-columns: 27px 1fr; column-gap: 7px; padding: 13px 15px; }
+      .summary-card .symbol { grid-row: span 2; margin: 1px 0 0; }
+      .summary-card span:last-child { margin-top: 3px; }
+      .policy-section { padding: 20px 18px; border-radius: 16px; }
+      p, ul { font-size: 13.5px; }
+    }
+    @media (max-width: 390px) {
+      .toc ol { grid-template-columns: 1fr; }
+      .hero-meta { display: grid; gap: 6px; }
+    }
+    @media print {
+      :root { --paper: #fff; --card: #fff; }
+      .hero { color: #111; background: #fff; border-bottom: 2px solid #174332; }
+      .hero-copy, .hero-meta, .brand-sub { color: #444; }
+      .brand-name, h1, .hero-meta strong { color: #111; }
+      .scope-note { color: #111; background: #f4f4ef; box-shadow: none; }
+      .layout { display: block; width: 100%; margin: 20px 0; }
+      .toc { display: none; }
+      .policy-section, .summary-card { break-inside: avoid; box-shadow: none; }
+      .contact-card { color: #111; background: #f4f4ef; }
+      .contact-card p { color: #444; }
+      footer { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand-row" aria-label="Quran Walls">
+        <span class="brand-mark" aria-hidden="true">۞</span>
+        <span class="brand-name">Quran Walls<span class="brand-sub">Android app privacy</span></span>
+      </div>
+      <span class="eyebrow">Privacy policy</span>
+      <h1>Your verses.<br>On your device.</h1>
+      <p class="hero-copy">A clear guide to what Quran Walls stores on your phone and what information is processed when the app downloads wallpaper artwork.</p>
+      <div class="hero-meta"><span><strong>Applies to:</strong> Quran Walls Android app</span><span><strong>Last updated:</strong> October 27, 2026</span></div>
+    </div>
+  </header>
+
+  <aside class="scope-note"><strong>Scope:</strong> This policy covers the Quran Walls mobile app only. It is separate from the TeraPlayer website privacy policy and does not cover the website’s accounts, cookies, analytics, or other services.</aside>
+
+  <main class="layout">
+    <nav class="toc" aria-label="Policy sections">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#information">Information handled</a></li>
+        <li><a href="#online">Online wallpaper library</a></li>
+        <li><a href="#local">Information stored locally</a></li>
+        <li><a href="#permissions">Permissions and sharing</a></li>
+        <li><a href="#providers">Service providers</a></li>
+        <li><a href="#retention">Retention and controls</a></li>
+        <li><a href="#children">Children’s privacy</a></li>
+        <li><a href="#changes">Policy changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <div class="content">
+      <div class="summary" aria-label="Privacy overview">
+        <div class="summary-card"><span class="symbol" aria-hidden="true">◈</span><strong>No account required</strong><span>The app does not ask you to create an account or provide a name or email.</span></div>
+        <div class="summary-card"><span class="symbol" aria-hidden="true">⌂</span><strong>Preferences stay local</strong><span>Your settings, favorites, and saved wallpaper recipes are stored on your device.</span></div>
+        <div class="summary-card"><span class="symbol" aria-hidden="true">☁</span><strong>Wallpapers load online</strong><span>Cloudflare processes ordinary network request data to deliver the catalog and images.</span></div>
+      </div>
+
+      <section id="overview" class="policy-section">
+        <p class="section-kicker">01 · Overview</p>
+        <h2>How Quran Walls handles information</h2>
+        <p>Quran Walls is an Android app for reading Quran verses and creating wallpapers. The app has no sign-in or account system. In the current release, it does not include advertising or analytics SDKs and does not send your preferences, favorites, selected verses, or saved wallpaper recipes to a Quran Walls server.</p>
+        <p>An internet connection is required to use the app and load wallpaper artwork. The Quran text and translations used to compose wallpapers are read from the app’s local Quran database.</p>
+        <div class="callout">The app and the website have separate functions and privacy practices. This document applies only to Quran Walls in the app.</div>
+      </section>
+
+      <section id="information" class="policy-section">
+        <p class="section-kicker">02 · Information handled</p>
+        <h2>Information the app does and does not receive</h2>
+        <p>Quran Walls does not ask you for personal details such as your name, email address, phone number, or location. It does not access contacts or collect location data.</p>
+        <p>When the app requests the remote catalog or a wallpaper image, your device necessarily sends standard network information such as its IP address, the requested file path, request time, and technical connection details. The app uses those requests to deliver wallpaper content; it does not attach your favorites or other personal profile information.</p>
+        <p>The app may process verse references and text locally to render wallpapers, populate the home-screen widget, and schedule a reminder if you enable one.</p>
+      </section>
+
+      <section id="online" class="policy-section">
+        <p class="section-kicker">03 · Online content</p>
+        <h2>Wallpaper catalog and Cloudflare R2</h2>
+        <p>The wallpaper catalog, thumbnails, and full-resolution artwork are hosted on Cloudflare R2. When you browse or use wallpapers, the app requests those files from the configured public host. Downloaded images may be cached in the app’s private cache so they do not need to be downloaded again immediately.</p>
+        <p>Cloudflare may process network request information, including IP address and request metadata, to deliver content and operate and protect its service. Its processing is governed by <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a>. Quran Walls does not control Cloudflare’s infrastructure logs or their retention periods.</p>
+        <p>The app currently uses a Cloudflare R2 development host by default. The app operator may change the wallpaper host in a later release.</p>
+      </section>
+
+      <section id="local" class="policy-section">
+        <p class="section-kicker">04 · On-device storage</p>
+        <h2>What stays on your phone</h2>
+        <p>The app stores information locally to provide its features, including:</p>
+        <ul>
+          <li>Theme, translation, Arabic font, text layout, and other appearance settings.</li>
+          <li>Favorites and saved wallpaper recipes, which contain verse references and style choices.</li>
+          <li>Your onboarding completion and automatic wallpaper change preferences.</li>
+          <li>Downloaded wallpaper cache files and temporary generated wallpaper images.</li>
+          <li>Locally prepared daily verse data for the widget and optional reminder.</li>
+        </ul>
+        <p>The Quran database is included with the app and is queried on the device. The app does not upload your Quran searches or verse selections.</p>
+      </section>
+
+      <section id="permissions" class="policy-section">
+        <p class="section-kicker">05 · Permissions and sharing</p>
+        <h2>You choose when device features are used</h2>
+        <ul>
+          <li><strong>Wallpaper:</strong> When you choose Apply, Android’s wallpaper service sets the generated image on the home screen, lock screen, or both, according to your selection.</li>
+          <li><strong>Gallery:</strong> The app requests permission only when you choose to save a generated wallpaper to your photo gallery. It does not need permission to browse or read your existing photos.</li>
+          <li><strong>Notifications:</strong> Daily verse reminders are optional. If enabled, reminder content is scheduled on the device and displayed by Android. You can turn reminders off in the app or revoke notification permission in Android settings.</li>
+          <li><strong>Widget:</strong> If you add the Quran Walls widget, verse content and its display preferences are stored locally so Android can update the widget.</li>
+          <li><strong>Sharing:</strong> If you share a wallpaper, Android opens the system share sheet. The app passes the image to the destination you select; that destination’s privacy practices then apply.</li>
+        </ul>
+      </section>
+
+      <section id="providers" class="policy-section">
+        <p class="section-kicker">06 · Service providers</p>
+        <h2>Third-party services involved</h2>
+        <p>Cloudflare R2 hosts and delivers the wallpaper catalog and artwork. Android provides system features such as notifications, wallpaper setting, gallery saving, and sharing. Google Play may process information under its own terms when you install or update the app.</p>
+        <p>The current app release does not integrate ad networks, analytics providers, or an account/authentication service.</p>
+      </section>
+
+      <section id="retention" class="policy-section">
+        <p class="section-kicker">07 · Retention and controls</p>
+        <h2>Managing or removing app data</h2>
+        <p>Locally stored app settings and saved wallpaper recipes remain on the device until you clear the app’s storage or uninstall Quran Walls. Android may clear cached wallpaper files at any time; the app can download them again while online. Wallpapers you save to your gallery remain there until you delete them using your gallery app.</p>
+        <p>You can disable reminders from Quran Walls settings or Android notification settings, revoke gallery permission in Android settings, and clear app data or uninstall the app using Android’s app settings.</p>
+      </section>
+
+      <section id="children" class="policy-section">
+        <p class="section-kicker">08 · Children</p>
+        <h2>Children’s privacy</h2>
+        <p>Quran Walls does not ask users to submit personal information and does not knowingly collect personal information from children. If you believe personal information was provided to the app operator, contact us so we can review the request.</p>
+      </section>
+
+      <section id="changes" class="policy-section">
+        <p class="section-kicker">09 · Updates</p>
+        <h2>Changes to this policy</h2>
+        <p>This policy may be updated if the app’s data practices or features change. The latest version will be published at this address, with its revision date shown at the top of the page. Material changes to the app’s handling of information will be reflected here before or when the changed feature is released.</p>
+      </section>
+
+      <section id="contact" class="policy-section">
+        <p class="section-kicker">10 · Contact</p>
+        <h2>Questions about Quran Walls privacy?</h2>
+        <p>Contact the app operator about this policy or a privacy request. Please do not include sensitive personal information unless it is needed to explain your request.</p>
+        <div class="contact-card"><div><strong>Quran Walls privacy support</strong><p>TeraPlayer · Quran Walls Android app</p></div><a href="mailto:teraplayer.contact@gmail.com?subject=Quran%20Walls%20privacy">Email privacy support</a></div>
+      </section>
+    </div>
+  </main>
+
+  <footer><p>Quran Walls app privacy policy · Last updated October 27, 2026</p><p>This standalone policy page does not use the TeraPlayer website’s navigation, account system, or analytics code.</p></footer>
+</body>
+</html>
