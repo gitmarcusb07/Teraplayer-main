@@ -144,6 +144,18 @@ export default function BlogPost() {
           </motion.div>
         </section>
 
+        {post.image && (
+          <div className="tp-container">
+            <div className="mx-auto max-w-3xl">
+              <img
+                src={post.image}
+                alt={post.imageAlt || post.title}
+                className="w-full rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+        )}
+
         <section className="tp-container pb-16 md:pb-20">
           <div className="mx-auto max-w-3xl space-y-5">
             {post.sections.map(renderSection)}
