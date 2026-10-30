@@ -457,7 +457,7 @@ export default function Home() {
     <div className="App noise min-h-screen">
       <Seo
         title="TeraPlayer - TeraBox Video Player, Downloader & Watch Online"
-        description="Open TeraBox links free: watch TeraBox videos online and download supported files right in your browser. No login, HD quality."
+        description="TeraPlayer is a free TeraBox downloader and player: open TeraBox links, watch TeraBox videos online and download supported files right in your browser. No login, HD quality."
         path="/"
         ogTitle="TeraPlayer - TeraBox Video Player, Downloader & Watch Online"
         ogDescription="Watch TeraBox videos online and download supported files with TeraPlayer — a free TeraBox online player and downloader. No login required."
