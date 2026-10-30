@@ -20,10 +20,10 @@ export default function BlogList() {
       <Header />
       <Seo
         title="Blog - TeraPlayer"
-        description="TeraBox and tech guides from TeraPlayer: watch videos without the app, fix links that will not open, and download on your phone, step by step."
+        description="Trending guides and news from TeraPlayer: TeraBox, tech, gaming, cinema and pop culture — watch videos without the app, fix links that will not open, and download on your phone, step by step."
         path="/blog"
         ogTitle="Blog - TeraPlayer"
-        ogDescription="TeraBox and tech guides from TeraPlayer: watch videos without the app, fix links that will not open, and download on your phone, step by step."
+        ogDescription="Trending guides and news from TeraPlayer: TeraBox, tech, gaming, cinema and pop culture — watch videos without the app, fix links that will not open, and download on your phone, step by step."
       />
 
       <main>
