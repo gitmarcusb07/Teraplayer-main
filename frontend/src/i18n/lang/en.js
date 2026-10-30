@@ -6,6 +6,7 @@ export default {
   "nav.video": "Video",
   "nav.downloader": "Downloader",
   "nav.help": "Help",
+  "nav.blog": "Blog",
   "nav.openMenu": "Open menu",
   "nav.closeMenu": "Close menu",
   "nav.mobileTitle": "Navigation menu",

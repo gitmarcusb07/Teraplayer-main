@@ -20,6 +20,8 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const HelpCenter = lazy(() => import("@/pages/HelpCenter"));
+const BlogList = lazy(() => import("@/pages/BlogList"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const AdminRoute = lazy(() => import("@/components/admin/AdminRoute"));
 const AdminLogin = lazy(() => import("@/pages/admin/AdminLogin"));
@@ -83,6 +85,8 @@ function PublicShell() {
             <Route path="/about-teraplayer" element={<Navigate to="/about" replace />} />
             <Route path="/copyright" element={<Navigate to="/contact" replace />} />
             <Route path="/help-center" element={<HelpCenter />} />
+            <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {/* Removed pages (player, downloader, folder, zip) all resolve on Home — keep old links/SEO working */}
             <Route path="/terabox-video-downloader" element={<Navigate to="/" replace />} />
             <Route path="/terabox-video-player" element={<Navigate to="/" replace />} />

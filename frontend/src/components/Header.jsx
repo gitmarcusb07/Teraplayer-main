@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
-import { Menu, X, Home, Info, Mail, LifeBuoy, Sun, Moon, Globe, Check } from "lucide-react";
+import { Menu, X, Home, Info, Mail, LifeBuoy, Newspaper, Sun, Moon, Globe, Check } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -115,6 +115,13 @@ export default function Header() {
               testId="nav-help"
               icon={LifeBuoy}
               label={t("nav.help")}
+            />
+            <TabLink
+              to="/blog"
+              active={location.pathname === "/blog" || location.pathname.startsWith("/blog/")}
+              testId="nav-blog"
+              icon={Newspaper}
+              label={t("nav.blog")}
             />
             <TabLink
               to="/contact"
@@ -277,6 +284,9 @@ export default function Header() {
                   </DrawerLink>
                   <DrawerLink to="/help-center" onClick={() => setMobileMenuOpen(false)} icon={LifeBuoy} testId="mobile-nav-help">
                     {t("nav.helpCenter")}
+                  </DrawerLink>
+                  <DrawerLink to="/blog" onClick={() => setMobileMenuOpen(false)} icon={Newspaper} testId="mobile-nav-blog">
+                    {t("nav.blog")}
                   </DrawerLink>
                   <DrawerLink to="/contact" onClick={() => setMobileMenuOpen(false)} icon={Mail} testId="mobile-nav-contact">
                     {t("nav.contact")}

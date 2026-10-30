@@ -32,7 +32,7 @@ const path = require("path");
 const { execSync } = require("child_process");
 
 const BUILD_DIR = path.join(__dirname, "..", "build");
-const ROUTES = ["/", "/about", "/contact", "/help-center", "/privacy", "/terms"];
+const ROUTES = ["/", "/about", "/contact", "/help-center", "/blog", "/privacy", "/terms"];
 
 // Fail the build when prerendering fails so a blank-shell deploy can never
 // ship silently. Opt out with PRERENDER_STRICT=0 (not recommended ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â
