@@ -6,6 +6,10 @@
  *  2. `slug` must be unique, lowercase, kebab-case, and match the post's URL:
  *     /blog/<slug>. Never reuse a slug, even for a revised post.
  *  3. `date` is YYYY-MM-DD (the publish date). `excerpt` is one sentence.
+ *     `image` (optional but preferred) is a high-quality cover image URL that
+ *     loads publicly, with `imageAlt` describing it. Use the real poster or
+ *     official image for a movie/show/game when one exists, otherwise a good
+ *     topical image; never a broken, low-resolution, or watermarked image.
  *  4. `sections` is an ordered list of content blocks. Supported block types:
  *       { type: "p", text: "..." }                        paragraph
  *       { type: "h2", text: "..." }                       section heading
@@ -27,6 +31,8 @@
 export const posts = [
   {
     slug: "new-ott-releases-this-weekend-october-30-2026",
+    image: "https://www.ottrelease.com/wp-content/uploads/2026/10/akka.jpg",
+    imageAlt: "Akka, the Netflix crime thriller leading this weekend's new OTT releases",
     title: "New OTT Releases This Weekend (October 30, 2026): Akka, Sigma, The Strangers: Chapter 3 and More",
     description:
       "New OTT releases this weekend, October 30, 2026: Akka and Sigma on Netflix, The Strangers: Chapter 3 on Prime Video, plus new South Indian titles on SonyLIV, ZEE5 and JioHotstar.",
@@ -103,6 +109,8 @@ export const posts = [
   },
   {
     slug: "watch-terabox-video-online-without-app",
+    image: "https://www.teraplayer.in/images/feature-player.webp",
+    imageAlt: "TeraPlayer video player opening a TeraBox link in the browser",
     title: "How to Watch a TeraBox Video Online Without the App",
     description:
       "Learn how to watch a TeraBox video online without the app, using just your browser. No install and no TeraBox login needed for public links.",
