@@ -105,6 +105,8 @@ export default function BlogPost() {
         path={`/blog/${post.slug}`}
         ogTitle={`${post.title} - TeraPlayer`}
         ogDescription={post.description}
+        image={post.image}
+        imageAlt={post.imageAlt}
       >
         <meta property="article:published_time" content={post.date} />
       </Seo>
