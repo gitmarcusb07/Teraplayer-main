@@ -26,6 +26,82 @@
 
 export const posts = [
   {
+    slug: "new-ott-releases-this-weekend-october-30-2026",
+    title: "New OTT Releases This Weekend (October 30, 2026): Akka, Sigma, The Strangers: Chapter 3 and More",
+    description:
+      "New OTT releases this weekend, October 30, 2026: Akka and Sigma on Netflix, The Strangers: Chapter 3 on Prime Video, plus new South Indian titles on SonyLIV, ZEE5 and JioHotstar.",
+    excerpt:
+      "This weekend's new OTT releases bring crime thrillers, action drama, horror and South Indian stories to Netflix, Prime Video, SonyLIV, ZEE5 and JioHotstar from October 30, 2026.",
+    date: "2026-10-30",
+    category: "Pop Culture",
+    sections: [
+      {
+        type: "p",
+        text: "If you are looking for what to watch this weekend, the new OTT releases this weekend have arrived at a good time. From Friday, October 30, 2026, several new movies and shows are streaming across Netflix, Prime Video, SonyLIV, ZEE5 and JioHotstar. The mix covers Tamil and Telugu stories, crime thrillers, action drama, horror and family drama, so there is something here whether you want a tense weekend binge or a lighter watch.",
+      },
+      { type: "h2", text: "New OTT releases this weekend: the quick list" },
+      {
+        type: "list",
+        items: [
+          "Akka — Netflix, from October 30, 2026. A Tamil crime thriller set in the 1980s.",
+          "Sigma — Netflix, from October 30, 2026. A Tamil action drama.",
+          "The Strangers: Chapter 3 — Prime Video and Apple TV+, from October 30, 2026.",
+          "Love Always — JioHotstar, from October 30, 2026. Adapted from a Korean webtoon.",
+          "Rudravanam PS — ZEE5, from October 30, 2026. A Telugu investigation series.",
+          "More South Indian titles — SonyLIV, ZEE5 and JioHotstar, from October 30, 2026.",
+        ],
+      },
+      { type: "h2", text: "Akka on Netflix: the weekend's big crime thriller" },
+      {
+        type: "p",
+        text: "Akka is the title most people will be searching for this weekend. It is a Tamil crime thriller set in the fictional town of Pernuru in the 1980s, and it centres on a gold-smuggling network run by women. Keerthy Suresh plays Bhavani, the feared boss of the syndicate, with Radhika Apte and Tanvi Azmi also starring. If you like period crime stories with a strong central character, start here.",
+      },
+      { type: "h2", text: "Sigma on Netflix: Tamil action drama to watch" },
+      {
+        type: "p",
+        text: "Sigma is a Tamil action drama that also arrives on Netflix on October 30, 2026. It marks the directorial debut of Jason Sanjay, and Telugu and Hindi language tracks are available, which makes it an easy pick for viewers who do not watch Tamil originals. Action drama fans who want a new film, rather than a new series, should put this near the top of the list.",
+      },
+      { type: "h2", text: "The Strangers: Chapter 3 on Prime Video" },
+      {
+        type: "p",
+        text: "For horror fans, The Strangers: Chapter 3 streams on Prime Video and Apple TV+ from October 30, 2026. It is the weekend's clear horror pick, and it pairs well with a late-night watch. If you are choosing between a thriller and a horror film this weekend, this is the horror option to start with.",
+      },
+      { type: "h2", text: "More new South Indian OTT releases today" },
+      {
+        type: "p",
+        text: "Friday, October 30, 2026 is a crowded day for South Indian streaming. Six new South Indian titles are streaming from today across Netflix, SonyLIV, ZEE5 and JioHotstar, covering Tamil, Telugu and Malayalam stories in comedy, crime, romance, horror and investigation. Two more to note are Love Always on JioHotstar, adapted from a Korean webtoon called Here We Go Again, and Rudravanam PS on ZEE5, a Telugu series following Sub-Inspector Sivakumar, played by Naresh Agastya.",
+      },
+      { type: "h2", text: "What to watch first this weekend" },
+      {
+        type: "steps",
+        items: [
+          "Want a crime thriller? Start with Akka on Netflix.",
+          "Want a new action film? Watch Sigma on Netflix.",
+          "Want horror? Choose The Strangers: Chapter 3 on Prime Video.",
+          "Want a series to follow into the week? Try Rudravanam PS on ZEE5 or Love Always on JioHotstar.",
+          "Check the language options before you start, especially for Sigma, which offers Telugu and Hindi tracks as well.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "What are the new OTT releases this weekend, October 30, 2026?",
+            a: "The new OTT releases this weekend include Akka and Sigma on Netflix, The Strangers: Chapter 3 on Prime Video and Apple TV+, and new South Indian titles on SonyLIV, ZEE5 and JioHotstar, all from October 30, 2026.",
+          },
+          {
+            q: "Where can I watch Akka?",
+            a: "Akka streams on Netflix from October 30, 2026. It is a Tamil crime thriller set in the 1980s, starring Keerthy Suresh, Radhika Apte and Tanvi Azmi.",
+          },
+          {
+            q: "Is Sigma available in Hindi or Telugu?",
+            a: "Yes, according to the release listings, Sigma offers Telugu and Hindi language tracks in addition to its Tamil version on Netflix.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "watch-terabox-video-online-without-app",
     title: "How to Watch a TeraBox Video Online Without the App",
     description:
