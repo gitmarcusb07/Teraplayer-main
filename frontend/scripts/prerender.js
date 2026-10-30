@@ -32,7 +32,19 @@ const path = require("path");
 const { execSync } = require("child_process");
 
 const BUILD_DIR = path.join(__dirname, "..", "build");
-const ROUTES = ["/", "/about", "/contact", "/help-center", "/blog", "/privacy", "/terms"];
+const BASE_ROUTES = ["/", "/about", "/contact", "/help-center", "/blog", "/privacy", "/terms"];
+
+// Blog posts are prerendered too, so Google sees full article HTML instead
+// of a JS shell. posts.js is ESM, so parse its slugs out of the source text
+// rather than importing it into this CommonJS script.
+let blogRoutes = [];
+try {
+  const postsSource = fs.readFileSync(path.join(__dirname, "..", "src", "blog", "posts.js"), "utf8");
+  blogRoutes = [...postsSource.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => `/blog/${m[1]}`);
+} catch (e) {
+  console.warn(`[prerender] could not read blog slugs (${e.message}); prerendering base routes only`);
+}
+const ROUTES = [...BASE_ROUTES, ...blogRoutes];
 
 // Fail the build when prerendering fails so a blank-shell deploy can never
 // ship silently. Opt out with PRERENDER_STRICT=0 (not recommended ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â
@@ -247,3 +259,4 @@ async function main() {
 main().catch((e) => {
   fail(`failed (${e.message}) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â NOT shipping: fix the error above or the deploy would serve blank HTML to crawlers`);
 });
+
