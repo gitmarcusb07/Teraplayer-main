@@ -62,6 +62,14 @@ export default function BlogList() {
                 key={post.slug}
                 className="rounded-2xl border border-border bg-surface-raised p-6 sm:p-7"
               >
+                {post.image && (
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt || post.title}
+                    loading="lazy"
+                    className="mb-5 aspect-[16/9] w-full rounded-xl object-cover"
+                  />
+                )}
                 <p className="flex flex-wrap items-center gap-3 text-xs font-medium text-muted-foreground">
                   <span>{post.category}</span>
                   <span className="inline-flex items-center gap-1">
