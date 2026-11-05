@@ -44,7 +44,15 @@ try {
 } catch (e) {
   console.warn(`[prerender] could not read blog slugs (${e.message}); prerendering base routes only`);
 }
-const ROUTES = [...BASE_ROUTES, ...blogRoutes];
+
+// Watch Later app legal pages. They are standalone documents reached only
+// from the Android app and the Google Play listing, never from this website.
+const APP_LEGAL_ROUTES = [
+  "/watchlater-privacypolicy",
+  "/watchlater-terms-and-conditions",
+];
+
+const ROUTES = [...BASE_ROUTES, ...blogRoutes, ...APP_LEGAL_ROUTES];
 
 // Fail the build when prerendering fails so a blank-shell deploy can never
 // ship silently. Opt out with PRERENDER_STRICT=0 (not recommended ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â

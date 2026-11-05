@@ -19,6 +19,10 @@ const About = lazy(() => import("@/pages/AboutTeraPlayer"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+// Watch Later app legal pages. Reached only from the Android app and store
+// listing — intentionally not linked anywhere on the website.
+const AppPrivacyPolicy = lazy(() => import("@/pages/AppPrivacyPolicy"));
+const AppTerms = lazy(() => import("@/pages/AppTerms"));
 const HelpCenter = lazy(() => import("@/pages/HelpCenter"));
 const BlogList = lazy(() => import("@/pages/BlogList"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
@@ -82,6 +86,8 @@ function PublicShell() {
             <Route path="/meet-the-dev" element={<Navigate to="/about" replace />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<AppPrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<AppTerms />} />
             <Route path="/about-teraplayer" element={<Navigate to="/about" replace />} />
             <Route path="/copyright" element={<Navigate to="/contact" replace />} />
             <Route path="/help-center" element={<HelpCenter />} />
