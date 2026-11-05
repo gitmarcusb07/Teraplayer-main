@@ -30,54 +30,43 @@
 
 export const posts = [
 {
-    slug: "jio-rs-15-unlimited-5g-data-pack-24-hour-validity-november-2026",
-    image: "https://www.mymobileindia.com/wp-content/uploads/2026/11/jio-1.webp",
-    imageAlt: "Jio promotional graphic for the Rs 15 unlimited 5G data add-on: unlimited 5G for one day, 1 day validity",
-    title: "Jio Rs 15 5G Pack: Truly Unlimited 5G Data for 24 Hours — Price, Benefits and How to Recharge",
+    slug: "ntt-docomo-outage-japan-unauthorized-access-november-5-2026",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Shinjuku_Gyoen_National_Garden_and_NTT_DoCoMo_Yoyogi_Building,_Tokyo,_Japan.jpg/1280px-Shinjuku_Gyoen_National_Garden_and_NTT_DoCoMo_Yoyogi_Building,_Tokyo,_Japan.jpg",
+    imageAlt: "NTT Docomo's Yoyogi Building in Tokyo (file photo; the tower houses Docomo network equipment)",
+    title: "NTT Docomo Outage: Japan's Largest Carrier Hit by Nationwide Disruption After Suspected Unauthorized Access",
     description:
-      "Jio Rs 15 5G pack gives truly unlimited 5G data for 24 hours across India. Check price, benefits, eligibility and how to recharge it on the MyJio app.",
+      "NTT Docomo outage: Japan's largest carrier reports nationwide disruption to calls, data and texts after suspending services over suspected unauthorized access.",
     excerpt:
-      "Reliance Jio has launched a Rs 15 data pack that offers truly unlimited 5G data for 24 hours, for users who need heavy data for a day without buying a bigger plan.",
+      "NTT Docomo, Japan's largest mobile carrier, is experiencing a nationwide service disruption on Thursday, November 5, 2026, with calls, mobile data and text messages unstable across the country — hours after the company suspended its online shop and customer portal over suspected unauthorized access to its servers.",
     date: "2026-11-05",
     category: "Tech",
     sections: [
-      { type: "p", text: "The Jio Rs 15 5G pack is real: Reliance Jio has launched a data add-on priced at Rs 15 that gives you truly unlimited 5G data for 24 hours. Announced on November 4, 2026, and available across India from November 5, it is aimed at anyone who needs a full day of heavy data — 4K streaming, online gaming, big downloads or remote work — without paying for a longer plan." },
-      { type: "p", text: "Here is the short version: for Rs 15 you get one day of unlimited high-speed data on Jio's True 5G network, with no fixed data cap for those 24 hours. Recharge it through the MyJio app, Jio.com or retail and third-party channels, anywhere in India with True 5G coverage. You need a 5G phone and True 5G coverage, and reports say an active base plan too." },
-      { type: "h2", text: "Jio Rs 15 5G Pack: Price, Validity and Benefits" },
+      { type: "p", text: "NTT Docomo outage: Japan's largest mobile carrier is experiencing a nationwide service disruption on Thursday, November 5, 2026, with voice calls, mobile data and text messages unstable across the country since late morning. The disruption comes hours after Docomo suspended its online shop and customer portal, saying an outside party had likely gained unauthorized access to its servers." },
+      { type: "p", text: "Docomo said the mobile service problems began at around 11:18 a.m. Japan time (around 7:48 a.m. IST), according to Kyodo News, and that it is investigating the cause. The company has not given a time for restoration, and it said it was unclear whether the suspected unauthorized access was linked to the mobile network disruption. Services offered by smaller providers that run on Docomo's network are also affected." },
+      { type: "h2", text: "NTT Docomo Outage: What Is Happening Right Now" },
+      { type: "p", text: "The carrier said voice calls, mobile data communications and texting have been unstable nationwide since late morning on Thursday. The problems are not limited to Docomo's own customers: mobile virtual network operators — smaller brands that sell service over Docomo's network — are affected too. Docomo said it was also checking whether emergency calls to 110 and 119, Japan's police and fire numbers, were affected." },
+      { type: "p", text: "Earlier in the day, before the network problems began, Docomo suspended its online shop and the My docomo customer portal. The suspension began at around 1:05 a.m. Japan time, leaving customers unable to sign up for plans, check bills or make contract changes. The company said it had concluded that an outside party had likely gained unauthorized access to its servers, and suspended the services to investigate. No estimate has been given for when they will return." },
       { type: "list", items: [
-        "Price: Rs 15.",
-        "Validity: 24 hours (one day) from activation.",
-        "Data: truly unlimited 5G data — Jio says there is no fixed daily data cap for the pack.",
-        "Network: Jio True 5G, the operator's standalone 5G network.",
-        "Availability: pan-India, across all telecom circles.",
-        "Recharge channels: MyJio app, Jio.com, Reliance Retail, recharge outlets and third-party platforms.",
-        "Extra benefit: some reports also mention 200 MB of 4G data bundled with the pack."
+        "Around 1:05 a.m. JST, November 5: Docomo suspends its online shop and My docomo portal after concluding an outside party likely gained unauthorized access to its servers.",
+        "Around 11:18 a.m. JST (7:48 a.m. IST), November 5: voice calls, mobile data and texting become unstable across Japan, and Docomo says it is investigating.",
+        "Around noon JST, November 5: Docomo confirms a nationwide outage affecting calls, data and SMS, with smaller providers on its network also hit.",
+        "Afternoon JST, November 5: no restoration time announced; the cause is still under investigation, and the link to the suspected unauthorized access is unconfirmed."
       ] },
-      { type: "p", text: "The word “truly” matters here. Most data add-ons give you a fixed amount — 1GB, 2GB or 6GB — and then stop or slow down. Jio describes this pack as truly unlimited 5G, with no set allowance to burn through in 24 hours. One honest gap: the announcement mentions no fair-usage policy or speed-reduction threshold, so it is not clear what happens after very heavy use in one day. Treat “unlimited” as Jio's description of the pack, not a guarantee of full speed with no ceiling at all." },
-      { type: "h2", text: "Who Can Use the Jio Rs 15 5G Pack?" },
-      { type: "p", text: "The pack is a data add-on for Jio prepaid users, and three things decide whether it works for you. First, you need a 5G-enabled smartphone. Second, you must be inside Jio True 5G coverage — the unlimited data only applies on the 5G network, not on 4G. Third, reports say you need an active base plan, because the pack sits on top of your existing plan rather than replacing it. Jio's own announcement does not spell out the base-plan point, so if your number already has an active plan you are covered either way." },
-      { type: "h2", text: "How to Recharge the Jio Rs 15 5G Pack" },
-      { type: "steps", items: [
-        "Open the MyJio app, or go to Jio.com, and log in with your Jio number.",
-        "Go to Recharge or Data Packs and find the Rs 15 Unlimited 5G Data Pack.",
-        "Select it and confirm the Rs 15 price and 24-hour validity on screen.",
-        "Pay by UPI, net banking or card, and wait for the activation message.",
-        "Switch your phone to 5G and check you are on Jio True 5G before streaming or downloading."
-      ] },
-      { type: "p", text: "You can also buy the same pack at Reliance Retail stores, recharge outlets and third-party apps. The 24-hour clock starts when the pack is activated, so recharge it when you actually need the data, not hours in advance." },
-      { type: "h2", text: "What Can You Do With 24 Hours of Unlimited 5G?" },
-      { type: "p", text: "A full day of unlimited 5G is most useful for things that eat data fast. Stream a cricket match or a film in 4K without watching your daily limit, play online games on low-latency 5G, download a large game or a software update, back up photos and videos to the cloud, or turn your phone into a hotspot for a laptop while you work remotely. It also fits travel days and work-from-home days when the Wi-Fi is unreliable. One practical tip: if the big download is a video someone shared as a TeraBox link, open it in your browser on teraplayer.in without the TeraBox app." },
-      { type: "h2", text: "Is the Jio Rs 15 5G Pack Worth It?" },
-      { type: "p", text: "At Rs 15, it is hard to argue with the price if you actually need a heavy-data day. One day of unlimited 5G costs less than most daily data add-ons, and it removes the worry about finishing a download or a stream before your quota runs out. It is best for occasional heavy use — a match day, a big download, a day of remote work — rather than a daily habit, because Rs 15 a day adds up to about Rs 450 a month, more than most monthly plans with unlimited 5G. If your plan already has unlimited 5G, you do not need this pack at all." },
-      { type: "h2", text: "Jio Rs 15 5G Pack: Frequently Asked Questions" },
+      { type: "h2", text: "Is the NTT Docomo Outage Linked to a Cyberattack?" },
+      { type: "p", text: "That is the question Docomo itself has not answered yet. What the company has confirmed is two separate facts: its servers were likely accessed by an outside party, and its mobile network later became unstable across the country. Docomo has said it is unclear whether the two are connected, and it has not described the server incident as a confirmed cyberattack or named any attacker. Until the company or investigators say more, the link between the two events should be treated as unproven, not as fact." },
+      { type: "p", text: "The distinction matters because a network outage and a server intrusion are different problems with different fixes. A network disruption can come from a configuration fault, equipment failure or congestion, while unauthorized server access points to a security incident in the company's online systems. Docomo is investigating both, and the priority for customers is the same either way: calls, data and texts that are hard to use, and online account services that are switched off." },
+      { type: "h2", text: "What NTT Docomo Customers Should Do During the Outage" },
+      { type: "p", text: "If you are in Japan and your Docomo service is unstable, the practical steps are simple. First, do not assume a single failed call means your phone is broken — the problem is network-wide, so retrying, toggling airplane mode or restarting the handset are the only immediate options. Second, avoid relying on Docomo's online shop or My docomo portal for urgent plan or billing changes, because those services are suspended while the company investigates the suspected unauthorized access." },
+      { type: "h2", text: "Why the NTT Docomo Outage Matters Beyond Japan" },
+      { type: "p", text: "Docomo is Japan's largest mobile carrier and a subsidiary of NTT, one of the world's biggest telecom groups, so a nationwide outage there is a major telecom event even for readers outside Japan. It also lands in a year of heavy pressure on telecom security: carriers hold the keys to their customers' calls, messages and mobile payments, which makes any suspected unauthorized access a serious matter even before it affects the network itself." },
+      { type: "p", text: "For the wider industry, the incident is a reminder that a carrier's websites and its radio network are separate systems that can fail on the same day for different reasons. The next updates to watch are Docomo's confirmation of the cause, a restoration time, and any statement on whether customer data was affected by the suspected unauthorized access." },
       { type: "faq", items: [
-        { q: "What is the Jio Rs 15 5G pack?", a: "It is a data add-on from Reliance Jio that costs Rs 15 and gives truly unlimited 5G data for 24 hours on the True 5G network, announced on November 4, 2026." },
-        { q: "How long is the Jio Rs 15 5G pack valid?", a: "The pack is valid for 24 hours, or one day, from activation." },
-        { q: "Do I need a 5G phone to use the Jio Rs 15 pack?", a: "Yes. You need a 5G-enabled smartphone and you must be inside Jio True 5G coverage, since the unlimited data applies only on the 5G network." },
-        { q: "Do I need an active base plan for the Jio Rs 15 5G pack?", a: "Reports say you need an active base plan on your Jio prepaid number, since the pack is a data add-on. Jio's announcement does not spell this out." },
-        { q: "How do I recharge the Jio Rs 15 5G pack?", a: "Open the MyJio app or go to Jio.com, find the Rs 15 Unlimited 5G Data Pack under recharge or data packs, and pay by UPI, net banking or card. It is also available at Reliance Retail stores and third-party recharge platforms." }
-      ] },
-      { type: "p", text: "The Jio Rs 15 5G pack is a small, simple idea: one day of unlimited 5G for the price of a cup of tea. If you have a 5G phone, True 5G coverage and a heavy-data day ahead, recharge it then." }
+        { q: "When did the NTT Docomo outage start?", a: "Docomo said voice calls, mobile data and texting became unstable from around 11:18 a.m. Japan time on Thursday, November 5, 2026 — about 7:48 a.m. IST. The outage is nationwide." },
+        { q: "What services are affected by the NTT Docomo outage?", a: "Voice calls, mobile data and SMS texting are unstable across Japan. Smaller providers that use Docomo's network are also affected. Separately, Docomo's online shop and My docomo portal are suspended." },
+        { q: "Was the Docomo outage caused by a cyberattack?", a: "That is not confirmed. Docomo said an outside party likely gained unauthorized access to its servers and suspended its online services, but the company said it was unclear whether that was linked to the network outage. No attacker has been named." },
+        { q: "Is the NTT Docomo outage fixed yet?", a: "As of the latest reports on Thursday afternoon Japan time, no restoration time had been announced and the cause was still under investigation. Check Docomo's official status page for the latest update." },
+        { q: "Are emergency calls affected by the Docomo outage?", a: "Docomo said it was checking whether emergency calls to 110 and 119 were affected and would provide information as soon as it had it. If you need urgent help, try a landline or another network." }
+      ] }
     ],
   },
 {
