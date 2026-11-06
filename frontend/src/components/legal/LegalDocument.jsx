@@ -34,9 +34,9 @@ function Blocks({ blocks }) {
         }
         if (block.type === "table") {
           return (
-            <div key={i} className="overflow-x-auto rounded-xl border border-border">
-              <table className="w-full border-collapse text-left text-sm">
-                <thead className="bg-secondary">
+            <div key={i} className="overflow-hidden rounded-xl border border-border">
+              <table className="block w-full border-collapse text-left text-sm sm:table">
+                <thead className="hidden bg-secondary sm:table-header-group">
                   <tr>
                     {block.head.map((cell) => (
                       <th key={cell} className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-foreground">
@@ -45,18 +45,26 @@ function Blocks({ blocks }) {
                     ))}
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="block sm:table-row-group">
                   {block.rows.map((row, r) => (
-                    <tr key={r} className="border-t border-border align-top">
+                    <tr
+                      key={r}
+                      className="block border-t border-border align-top first:border-t-0 sm:table-row sm:first:border-t"
+                    >
                       {row.map((cell, c) => (
                         <td
                           key={c}
                           className={
                             c === 0
-                              ? "px-4 py-3 font-medium text-foreground"
-                              : "px-4 py-3 text-muted-foreground"
+                              ? "block px-4 pb-1 pt-3 text-sm font-semibold text-foreground sm:table-cell sm:p-3 sm:font-medium"
+                              : "block px-4 py-2.5 text-muted-foreground sm:table-cell sm:p-3"
                           }
                         >
+                          {c > 0 ? (
+                            <span className="mb-1 block text-[10px] font-semibold uppercase tracking-wide text-muted-foreground sm:hidden">
+                              {block.head[c]}
+                            </span>
+                          ) : null}
                           {cell}
                         </td>
                       ))}
@@ -199,8 +207,9 @@ export default function LegalDocument({
             <section className="relative mt-6 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.09] via-card to-accent/[0.09] p-6 sm:p-7">
               <h2 className="text-base font-semibold tracking-tight">Questions about this document?</h2>
               <p className="mt-2 max-w-xl text-sm leading-7 text-muted-foreground">
-                Email us and we will reply within 30 days. For account or data deletion requests,
-                write from the email address linked to your account so we can verify it.
+                Email us and we will reply within 30 days. The app has no accounts and keeps your
+                library on your device, so there is no online account to delete — but we are happy
+                to answer privacy questions or help with a data request.
               </p>
               <a
                 href={`mailto:${contactEmail}`}

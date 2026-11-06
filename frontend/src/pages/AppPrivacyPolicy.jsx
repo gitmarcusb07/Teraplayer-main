@@ -8,15 +8,44 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Watch Later is an Android application published by TeraPlayer (\"we\", \"us\", \"our\"). This Privacy Policy explains what the app does with information when you install and use it. It applies to the Watch Later app distributed on Google Play under the package name com.watchlater.app, including all current and future versions of that app.",
+        text: "Watch Later is an Android application published by TeraPlayer (\"we\", \"us\", \"our\"). This Privacy Policy explains what the app does with information when you install and use it. It applies to the Watch Later app distributed on Google Play under the package name com.watchlater.app, including updates to that app.",
       },
       {
         type: "p",
-        text: "It does not apply to the TeraPlayer website or to any other TeraPlayer product; the website publishes its own separate privacy policy. It also does not apply to third-party services you reach from the app, such as a studio website, IMDb or a streaming platform, which have their own policies.",
+        text: "It applies to the app only. It does not describe the TeraPlayer website, which publishes its own separate privacy policy, and it does not apply to third-party services you reach from the app, such as a studio website, IMDb or a streaming platform. Those services have their own policies.",
       },
       {
         type: "p",
-        text: "You can use Watch Later without creating an account. If you never sign in, everything you save stays in the app's private storage on your phone and is never uploaded to us.",
+        text: "The current version of Watch Later has no account system. There is no sign-up, no sign-in, no email address, no password and no cloud profile. You open the app and start using it. Everything you add is kept on your device.",
+      },
+    ],
+  },
+  {
+    id: "data-safety",
+    title: "Google Play Data safety summary",
+    blocks: [
+      {
+        type: "p",
+        text: "This is the short version that matches the Data safety information we provide to Google Play for Watch Later:",
+      },
+      {
+        type: "table",
+        head: ["Question", "Watch Later"],
+        rows: [
+          ["Does the app collect personal data?", "No. The developer does not collect personal data through the app."],
+          ["Does the app share personal data?", "No. We do not share, sell or rent personal data."],
+          ["Does the app show ads?", "No. There are no ads and no advertising SDKs."],
+          ["Does the app track you?", "No. No analytics, no cross-app tracking, no fingerprinting and no advertising ID."],
+          ["Do I need an account?", "No. There is no sign-up, sign-in or subscription."],
+          ["Where is my library stored?", "On your device, in the app's private storage. It is not uploaded to us."],
+          ["Can I move my library?", "Yes. You can export a JSON backup file and import it on another device."],
+          ["How do I delete my data?", "Delete items in the app, clear the app's storage, or uninstall the app."],
+          ["Is data encrypted in transit?", "Yes. Network requests use HTTPS/TLS."],
+        ],
+      },
+      {
+        type: "p",
+        text: "The app does make network requests for public catalog information, such as a title you search for or a poster image. Those requests are described in section 5. They are not used by us to identify you and are not linked to an account, because there is no account.",
       },
     ],
   },
@@ -31,48 +60,36 @@ const SECTIONS = [
       {
         type: "list",
         items: [
-          "Your library: the movies, series and anime you add, whether each is on your watchlist, watched, or in progress.",
-          "Episode and season progress, so you can resume exactly where you stopped.",
+          "Your library: the movies, TV series and anime you add, and whether each title is on your watchlist, watched, in progress or completed.",
+          "Episode and season progress, so you can resume where you stopped, plus rewatch counts.",
           "Favorites, custom lists, personal ratings and \"interested\" marks for upcoming releases.",
           "Reminder schedules for release days and upcoming episodes.",
-          "App preferences, including onboarding completion, layout choices and the last library view you used.",
-          "Cached poster and backdrop images, so the app opens quickly and works offline.",
-          "Backup files, but only the ones you deliberately export — these are written to a location you choose and remain under your control.",
+          "Custom entries, notes and Creator Studio drafts or images you create in the app.",
+          "App preferences, including onboarding completion, theme, layout choices, rating settings, notification preferences and the last library view you used.",
+          "Cached poster and backdrop images and catalog details, so the app opens quickly and works offline.",
         ],
       },
       {
         type: "p",
-        text: "This data is used only to run the app's features on your device. Uninstalling Watch Later, or clearing its storage from Android settings, deletes it. If you want to keep your library across a reinstall, export a backup first from More → Export backup.",
+        text: "This data is used only to run the app's features on your device. It is not uploaded to us, and we have no server-side copy of your library. Uninstalling Watch Later, or clearing its storage from Android settings, deletes it. If you want to keep your library across a reinstall, export a backup first from More → Export backup.",
       },
     ],
   },
   {
     id: "accounts",
-    title: "If you create an account (optional)",
+    title: "No account, no sign-up and no cloud sync",
     blocks: [
       {
         type: "p",
-        text: "Creating an account is optional and exists only so a library can follow you to another device. Where account features are available, you can sign up with an email address and password or with Google Sign-In. Authentication is handled by Clerk, and account records plus synced library data are stored in Supabase on our behalf.",
+        text: "Watch Later does not offer account creation, sign-in, social login, subscriptions or cloud sync. We do not ask for your name, email address, phone number, password or date of birth, and the app does not create a profile for you.",
       },
       {
         type: "p",
-        text: "When you are signed in, the following is uploaded so it can be restored on your other devices:",
-      },
-      {
-        type: "list",
-        items: [
-          "Your account identifier, email address and display profile from Clerk or Google.",
-          "Your library entries and watch state: watchlist items, watched movies and episodes, series tracking, favorites, custom lists, ratings and \"interested\" marks.",
-          "Timestamps recording when each item changed, which the app uses to resolve conflicts between devices.",
-        ],
+        text: "If you see account-related code or settings in a development build, those features are not part of the public app and are not reachable in the version distributed on Google Play. The public app uses a local guest profile that exists only on your device.",
       },
       {
         type: "p",
-        text: "We never receive or store your password. Passwords are handled by Clerk using industry-standard hashing, and Google Sign-In never shares your Google password with us. Session tokens are kept in the device's protected storage and are removed when you sign out.",
-      },
-      {
-        type: "p",
-        text: "If you use the app as a guest, none of the account data above exists and nothing you save is transmitted to us.",
+        text: "Because there is no account, there is nothing for you to sign out of and no online account to delete. Your library lives on your device and remains under your control.",
       },
     ],
   },
@@ -82,41 +99,48 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "To show accurate titles, artwork, episode lists, ratings and release dates, the app requests public catalog data. Those requests contain the title you searched for or the identifier of the item being opened, plus the technical details any internet request carries, such as your IP address and device type:",
+        text: "To show accurate titles, artwork, episode lists, ratings and release dates, the app requests public catalog data when you browse or search. Those requests contain the title you searched for or the identifier of the item being opened, plus the technical details any internet request carries, such as your IP address, app version, device type and operating system. They do not contain your library, watch history, ratings, notes or backup file.",
       },
       {
         type: "table",
         head: ["Provider", "What is requested", "Why"],
         rows: [
-          ["TMDb", "Search terms, title IDs, artwork paths", "Movie and TV metadata, posters, cast"],
+          ["TMDb", "Search terms, title IDs, artwork paths", "Movie and TV metadata, posters and cast"],
           ["TheTVDB", "Search terms, series IDs, episode queries", "Season and episode lists"],
           ["AniList", "Anime search terms and IDs", "Anime metadata and airing schedules"],
-          ["Supabase (ours)", "Title IDs and media type", "IMDb rating lookup, OTT release dates, Global Hits"],
+          ["Supabase (our catalog service)", "Title IDs and media type", "IMDb rating lookup, OTT release dates and Global Hits"],
+          ["Image CDNs", "Artwork paths", "Poster and backdrop images"],
         ],
       },
       {
         type: "p",
-        text: "These requests are for public catalog information. Your library, ratings, notes and viewing progress are not sent to TMDb, TheTVDB or AniList. If you are signed in, catalog data you open may be cached locally to keep the app fast and usable offline.",
+        text: "These requests are for public catalog information. TMDb, TheTVDB, AniList and our catalog hosting provider may keep standard server logs under their own policies. We do not use those requests to build a profile of you, and we do not combine them with your library.",
+      },
+      {
+        type: "p",
+        text: "Some screens link to an external site, cinema listing, trailer or streaming platform. Opening one is your choice. Once you leave Watch Later, the third party's own privacy policy and terms apply, and we do not control what that service collects.",
       },
     ],
   },
   {
     id: "not-collected",
-    title: "What we do not collect",
+    title: "What we do not collect or use",
     blocks: [
       {
         type: "p",
-        text: "We built Watch Later to need as little as possible. In particular, the app does not:",
+        text: "Watch Later is built to need as little as possible. In particular, the app does not:",
       },
       {
         type: "list",
         items: [
-          "Show advertising or include any advertising SDK. There are no ad identifiers and no ad profiles.",
-          "Sell, rent or trade personal information, and there is no data broker relationship of any kind.",
-          "Use cross-app or cross-site tracking, fingerprinting or behavioural profiling.",
-          "Include third-party analytics or crash-reporting SDKs that profile what you watch.",
-          "Request access to your contacts, precise location, camera, microphone, SMS, call logs or health data.",
-          "Read your photo library in the background; gallery access is used only when you ask the app to save an image you created.",
+          "Show advertising or include any advertising SDK. There are no ad identifiers, ad profiles or sponsored content.",
+          "Include third-party analytics, crash-reporting, attribution or session-replay SDKs. We do not use Google Analytics, Firebase Analytics, PostHog, Sentry, Crashlytics or similar tools in the app.",
+          "Track you across apps or websites, fingerprint your device or build a behavioural profile.",
+          "Sell, rent or trade personal information, and we have no data-broker relationship of any kind.",
+          "Ask for an email address, password, phone number, contacts, precise location, camera, microphone, SMS, call logs, calendar or health data.",
+          "Read your photo library in the background. Gallery access is requested only when you ask the app to save an image you created.",
+          "Register a push-notification token or operate a push server. Reminders are scheduled locally on your device.",
+          "Upload your library, watch history, ratings, notes, custom entries or backup file to us.",
         ],
       },
     ],
@@ -129,15 +153,15 @@ const SECTIONS = [
         type: "table",
         head: ["Permission", "When it is used"],
         rows: [
-          ["Notifications", "Only if you turn on release-day and episode reminders. Reminders are scheduled locally on your device; we do not run a push server."],
-          ["Photos / media", "Only when you save a Creator Studio post or image to your gallery."],
-          ["Files and documents", "Only when you export or import a library backup, so you can choose the file and location."],
-          ["Internet / network state", "To load catalog metadata and, if signed in, to sync your library. The app also checks connectivity to avoid failing silently offline."],
+          ["Internet and network state", "To load catalog metadata and artwork. The app also checks connectivity so it can tell you when you are offline."],
+          ["Notifications and alarms", "Only if you turn on release-day or episode reminders. Reminders are scheduled locally. You can turn them off in the app or in Android settings."],
+          ["Photos and media", "Only when you save a Creator Studio image to your gallery. The app does not scan or upload your photos."],
+          ["Files and documents", "Only when you export or import a library backup, so you can choose the file and location through Android's system picker."],
         ],
       },
       {
         type: "p",
-        text: "You can revoke any permission in Android settings. Revoking notifications stops reminders; the rest of the app keeps working.",
+        text: "You can revoke any permission in Android settings. Revoking notifications stops reminders; the rest of the app keeps working. Revoking photo or file access only affects the save, export or import action that needs it.",
       },
     ],
   },
@@ -147,39 +171,34 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "We do not sell or share personal information for advertising. Information is disclosed only to the service providers that make the app work, and only as much as each one needs:",
+        text: "We do not sell, rent or share personal information for advertising or any other purpose. We do not have a server-side library to share.",
+      },
+      {
+        type: "p",
+        text: "The app uses a small number of service providers and public data sources to make catalog features work:",
       },
       {
         type: "table",
         head: ["Service", "Role", "Data involved"],
         rows: [
-          ["Clerk", "Authentication", "Email address, sign-in method, session tokens"],
-          ["Google", "Sign-In (optional)", "Google account identity and email, if you choose it"],
-          ["Supabase", "Database and sync hosting", "Account ID, email, synced library entries and timestamps"],
-          ["TMDb, TheTVDB, AniList", "Catalog metadata", "Search terms and title IDs in the request"],
+          ["Supabase", "Hosting our public catalog tables", "Title IDs and media type in the request; no account or library data"],
+          ["TMDb", "Movie and TV metadata", "Search terms and title IDs in the request"],
+          ["TheTVDB", "Series and episode metadata", "Search terms and series IDs in the request"],
+          ["AniList", "Anime metadata", "Anime search terms and IDs in the request"],
+          ["Google Play", "App distribution", "Handled by Google under Google Play's own terms and privacy policy"],
         ],
       },
       {
         type: "p",
-        text: "We may also disclose information if the law requires it, if we must protect the rights and safety of users or the public, or as part of a merger or acquisition where the receiving party remains bound by this policy. We will tell you if that happens, unless we are legally barred from doing so.",
+        text: "We may disclose information if the law requires it, if we must protect the rights and safety of users or the public, or as part of a merger or acquisition where the receiving party remains bound by this policy. In practice, we hold no personal data from the app to disclose.",
       },
       {
         type: "p",
-        text: "Some features let you share content you created — a Creator Studio image or a backup file — through Android's share sheet. What you share and who receives it is entirely your choice.",
-      },
-    ],
-  },
-  {
-    id: "legal-bases",
-    title: "Legal bases for processing",
-    blocks: [
-      {
-        type: "p",
-        text: "If you are in the European Economic Area, the United Kingdom or Switzerland, we rely on the following legal bases: performance of a contract when we provide the app and sync your library to your account; legitimate interests in keeping the service secure, preventing abuse and improving reliability; and consent where the law requires it, such as optional notifications, which you can withdraw at any time in Android settings.",
+        text: "If you email us for support, we receive your email address and whatever you choose to include in the message. We use it only to answer you and handle follow-ups. See section 9 for retention.",
       },
       {
         type: "p",
-        text: "Providing an email address and using an account is voluntary. Guest use relies only on the app running locally, which is why no personal data leaves your device in that mode.",
+        text: "Some features let you share content you created, such as a Creator Studio image or a backup file, through Android's share sheet. What you share and who receives it is entirely your choice.",
       },
     ],
   },
@@ -190,19 +209,18 @@ const SECTIONS = [
       {
         type: "list",
         items: [
-          "On-device library and preferences: kept until you delete the data in the app, clear app storage or uninstall the app.",
-          "Account and synced library: kept while your account exists. Deleting your account removes the account and its synced rows.",
-          "Reminder schedules: overwritten as you change them and removed when you delete the title, sign out of reminders, or uninstall.",
-          "Cached catalog data: refreshed as you browse and cleared with app storage.",
+          "On-device library, settings and cached images: kept until you delete the data in the app, clear app storage or uninstall the app.",
+          "Reminder schedules: overwritten as you change them and removed when you delete the title, turn reminders off or uninstall.",
           "Backup files: kept wherever you saved them, for as long as you keep them. We never receive them.",
-          "Support emails: kept for up to 24 months after the conversation ends so we can handle follow-ups and legal obligations.",
+          "Support emails: kept for up to 24 months after the conversation ends so we can handle follow-ups and legal obligations, then deleted.",
+          "Server-side library or account data: none exists, because the app has no accounts and does not upload your library.",
         ],
       },
     ],
   },
   {
     id: "deletion",
-    title: "Deleting your data and your account",
+    title: "Deleting your data",
     blocks: [
       {
         type: "p",
@@ -211,15 +229,15 @@ const SECTIONS = [
       {
         type: "list",
         items: [
-          "Delete individual items (a title, a list, a rating) directly in the app at any time.",
-          "Delete your account inside the app: More → Delete account. You confirm by typing your account email. The account and every row it owns are removed from our database, the local library is wiped, scheduled reminders are cancelled and you are signed out.",
-          "Delete everything on the device without an account by uninstalling the app or clearing its storage in Android settings.",
-          "Request deletion by email to teraplayer.contact@gmail.com from the address linked to the account. We action verified requests within 30 days and confirm when it is done.",
+          "Delete individual items (a title, a list, a rating, a custom entry) directly in the app at any time.",
+          "Remove all on-device data by clearing Watch Later's storage in Android settings or by uninstalling the app.",
+          "Delete a backup file from wherever you saved it (Files, Drive, email or another app). Deleting the app does not delete a backup you copied elsewhere.",
+          "Ask us to delete a support email by writing to teraplayer.contact@gmail.com from the address you used. We action verified requests within 30 days and confirm when it is done.",
         ],
       },
       {
         type: "p",
-        text: "Account deletion is permanent. Anything you want to keep should be exported first with More → Export backup. Residual copies may remain in encrypted backups for a limited period before they are overwritten, and we may retain minimal records where the law requires it.",
+        text: "There is no account-deletion step because there is no account. Everything the app knows about your library is on your device. That is also why we cannot restore a library for you after a device is wiped or the app is uninstalled; keep a backup if the library matters to you.",
       },
     ],
   },
@@ -229,15 +247,15 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Depending on where you live, you may have the right to access, correct, delete, restrict or object to processing of your personal information, to receive a portable copy, and to withdraw consent. You can exercise most of these directly in the app: your library is editable in place, backups give you a portable export, and account deletion is built in.",
+        text: "Depending on where you live, you may have the right to access, correct, delete, restrict or object to processing of your personal information, to receive a portable copy, and to withdraw consent. Because Watch Later keeps your library on your device and does not create an account, you can exercise most of these rights directly: your library is editable in place, Export backup gives you a portable copy, and clearing app storage or uninstalling deletes the local data.",
       },
       {
         type: "p",
-        text: "For anything else, email teraplayer.contact@gmail.com. We will verify your request and respond within 30 days, or within the shorter period your local law requires. You will not be charged or receive a lesser service for exercising these rights.",
+        text: "For a support email or any other request, contact teraplayer.contact@gmail.com. We will verify your request and respond within 30 days, or within the shorter period your local law requires. You will not be charged or receive a lesser service for exercising these rights.",
       },
       {
         type: "p",
-        text: "Users in India may exercise their rights under the Digital Personal Data Protection Act, 2023, including access, correction, erasure and grievance redressal, by contacting us at the same address. California residents have the right to know, delete, correct and opt out of sale or sharing; we do not sell or share personal information as those terms are defined by the CCPA/CPRA, and we do not discriminate for exercising these rights.",
+        text: "Users in India may exercise rights under the Digital Personal Data Protection Act, 2023, including access, correction, erasure and grievance redressal, by contacting us at the same address. California residents have the right to know, delete, correct and opt out of sale or sharing; we do not sell or share personal information as those terms are defined by the CCPA/CPRA, and we do not discriminate for exercising these rights.",
       },
       {
         type: "p",
@@ -251,11 +269,15 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Data in transit is protected with HTTPS/TLS. Account and sync data in Supabase is protected by row-level security so each account can only reach its own rows, and passwords never reach our servers. On the device, the library lives in app-private storage that other apps cannot read, and session tokens are kept in protected storage.",
+        text: "Network requests use HTTPS/TLS. On the device, the library lives in app-private storage that other apps cannot read, and notification reminders are scheduled through Android's local notification system. The app does not store a password because it never asks for one.",
       },
       {
         type: "p",
-        text: "No system is perfectly secure. Keep your device lock enabled, use a strong password or Google account protection, and contact us immediately if you suspect unauthorised access to your account.",
+        text: "We do not add a separate encryption layer to the local database, and an exported backup is a plain JSON file. Anyone who can read that file can read your library, so keep backups somewhere you trust and delete copies you no longer need. Device encryption and a screen lock protect local data if the phone is lost.",
+      },
+      {
+        type: "p",
+        text: "No system is perfectly secure. Keep your device lock enabled, install Android updates, and contact us immediately if you suspect someone has accessed a backup you shared.",
       },
     ],
   },
@@ -265,7 +287,7 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Our service providers may process data in countries other than yours, including the United States and the European Union. Where required, transfers rely on appropriate safeguards such as standard contractual clauses. Because guest use keeps everything on your device, no transfer takes place at all in that mode.",
+        text: "We do not transfer your library or account data internationally because we do not receive it. Catalog requests may be handled by TMDb, TheTVDB, AniList, image CDNs and our catalog hosting provider in countries other than yours, including the United States and the European Union, under their own safeguards and policies. Support emails are processed by the email provider we use.",
       },
     ],
   },
@@ -275,7 +297,11 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Watch Later is not directed to children under 13, and we do not knowingly collect personal information from them. If you are between 13 and the age of majority where you live, use the app only with the involvement of a parent or guardian. If you believe a child has provided us with personal information, email us and we will delete it.",
+        text: "Watch Later is not directed to children under 13, and we do not knowingly collect personal information from children. The app has no account and no advertising, and a child's library stays on the device like anyone else's. If you believe a child has sent us personal information by email, contact us and we will delete it.",
+      },
+      {
+        type: "p",
+        text: "If you are between 13 and the age of majority where you live, use the app only with the involvement of a parent or guardian.",
       },
     ],
   },
@@ -285,7 +311,7 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "We update this policy when the app changes — for example, when a new data source or feature is added. The effective date at the top always shows the current version, and material changes will be announced in the app or on the store listing before they take effect. Continuing to use Watch Later after an update means you accept the revised policy.",
+        text: "We update this policy when the app changes — for example, if a new data source or feature is added. The effective date at the top always shows the current version, and material changes will be announced in the app or on the store listing before they take effect. If a future version adds accounts or cloud sync, this policy will be updated before that version is released, and the change will be described clearly.",
       },
     ],
   },
@@ -295,7 +321,11 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Questions, requests and complaints about privacy can be sent to teraplayer.contact@gmail.com. Include the email address linked to your account where relevant, and we will reply within 30 days. This is also the contact address published on our Google Play listing.",
+        text: "Questions, requests and complaints about privacy can be sent to teraplayer.contact@gmail.com. This is also the developer contact address published on our Google Play listing. Include the app name and, where relevant, the email address you used to contact us, and we will reply within 30 days.",
+      },
+      {
+        type: "p",
+        text: "Developer: TeraPlayer. App: Watch Later (com.watchlater.app). This policy is provided for the Watch Later Android application and does not describe the TeraPlayer website, which has its own separate policies.",
       },
     ],
   },
@@ -305,36 +335,36 @@ export default function AppPrivacyPolicy() {
   return (
     <>
       <Seo
-        title="Watch Later App Privacy Policy | TeraPlayer"
-        description="How the Watch Later Android app handles your data: a private on-device library, an optional account for sync, no ads, no tracking and no selling of personal information."
-        path="/privacy-policy"
-        robots="noindex, follow"
+        title="Watch Later Privacy Policy | TeraPlayer"
+        description="Watch Later for Android keeps your watchlist, progress, ratings and backups on your device. No account, no ads, no analytics, no tracking and no selling of personal data."
+        path="/watchlater-privacypolicy"
+        robots="noindex, nofollow"
       />
       <LegalDocument
         eyebrow="Privacy Policy"
         title="Watch Later Privacy Policy"
-        intro="Watch Later is a personal movie and TV tracker. By default everything you save stays on your phone. This policy explains, in plain language, what the app stores, what it sends, and how you can delete it."
-        updated="5 November 2026"
+        intro="Watch Later is a personal movie, TV and anime tracker. Your library stays on your phone, there is no account, and the app contains no ads or tracking. This policy explains exactly what is stored, what the app sends when it loads catalog data, and how you can delete it."
+        updated="6 November 2026"
         version="1.0.5 and later"
         summary={[
           {
             kicker: "On your device",
-            title: "Your library is local by default",
-            body: "Watchlist, progress, favorites, lists, ratings and reminders live in the app's private database. No account needed.",
+            title: "Your library is local",
+            body: "Watchlist, progress, favorites, lists, ratings, reminders and backups live in the app's private storage. No account needed.",
           },
           {
-            kicker: "Optional",
-            title: "Accounts only for sync",
-            body: "Signing in is optional and exists so your library can follow you to another phone. Guest use uploads nothing.",
+            kicker: "No accounts",
+            title: "Nothing to sign up for",
+            body: "There is no sign-up, sign-in, email address or cloud profile. The app uses a local guest profile only.",
           },
           {
             kicker: "Never",
-            title: "No ads, no selling, no tracking",
-            body: "No advertising SDKs, no data brokers, no cross-app profiling. We do not sell personal information.",
+            title: "No ads, no tracking, no selling",
+            body: "No advertising SDKs, no analytics, no data brokers, no cross-app profiling and no sale of personal information.",
           },
         ]}
         sections={SECTIONS}
-        otherPage={{ to: "/terms-and-conditions", label: "Terms & Conditions for Watch Later" }}
+        otherPage={{ to: "/watchlater-terms-and-conditions", label: "Terms & Conditions for Watch Later" }}
       />
     </>
   );

@@ -16,7 +16,7 @@ const SECTIONS = [
       },
       {
         type: "p",
-        text: "These Terms cover the App only, not the TeraPlayer website, which is governed by its own separate terms.",
+        text: "These Terms cover the App only, not the TeraPlayer website, which is governed by its own separate terms. They also do not govern Google Play or any third-party service you reach from the App.",
       },
     ],
   },
@@ -26,7 +26,7 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Watch Later is a personal tracking tool. It lets you record the movies, TV series and anime you want to watch, mark what you have watched, track episode progress season by season, build lists and favorites, rate titles, and set local reminders for release days.",
+        text: "Watch Later is a personal tracking tool. It lets you record the movies, TV series and anime you want to watch, mark what you have watched, track episode progress season by season, build lists and favorites, rate titles, create shareable images in Creator Studio, and set local reminders for release days.",
       },
       {
         type: "p",
@@ -49,21 +49,20 @@ const SECTIONS = [
     ],
   },
   {
-    id: "account",
-    title: "Your account",
+    id: "no-account",
+    title: "No account, sign-in or cloud service",
     blocks: [
       {
         type: "p",
-        text: "You can use Watch Later without an account. An account is optional and exists only to sync your library across devices. Where account features are available you may register with an email address and password or with Google Sign-In.",
+        text: "The current version of Watch Later has no account system. There is no registration, sign-in, social login, subscription or cloud sync. We do not ask for your name, email address, phone number or password, and the App does not create an online profile for you.",
       },
       {
-        type: "list",
-        items: [
-          "Provide accurate information and keep your email address up to date, because it is how we contact you about your account and verify deletion requests.",
-          "Keep your password and Google account secure. You are responsible for activity under your account.",
-          "Do not share an account or create accounts by automated means to get around limits.",
-          "You can delete your account at any time in the App from More → Delete account, or by following the process in our Privacy Policy.",
-        ],
+        type: "p",
+        text: "Your library is stored locally on your device. If you see account-related code or screens in a development build, those features are not part of the public App and are not reachable in the version distributed on Google Play. The public App uses a local guest profile that exists only on your device.",
+      },
+      {
+        type: "p",
+        text: "Because there is no account, there is no account to terminate, suspend or delete. If a future version adds an account or cloud sync, these Terms and the Privacy Policy will be updated before that version is released.",
       },
     ],
   },
@@ -93,16 +92,16 @@ const SECTIONS = [
         type: "list",
         items: [
           "Reverse engineer, decompile or attempt to extract the source code of the App, except where the law expressly permits it.",
-          "Bypass, disable or interfere with security features, rate limits, authentication or the sync system.",
-          "Scrape, crawl or bulk-extract data from our servers, or use the App to build a competing dataset or service.",
+          "Bypass, disable or interfere with security features, rate limits or authentication mechanisms, or attempt to access another person's device or data.",
+          "Scrape, crawl or bulk-extract data from our catalog service, or use the App to build a competing dataset or service.",
           "Use automated scripts, bots or emulators to stress or abuse the service.",
-          "Upload or create content that is unlawful, infringing, hateful, harassing or malicious in custom entries, notes or shared images.",
+          "Upload or create content that is unlawful, infringing, hateful, harassing or malicious in custom entries, notes, Creator Studio images or shared images.",
           "Use the App in violation of any applicable law, including copyright and data-protection law, or in a way that harms other users, our providers or us.",
         ],
       },
       {
         type: "p",
-        text: "We may suspend or terminate access if you breach these rules, and we may remove content that violates them.",
+        text: "We may suspend or terminate access to any service we operate if you breach these rules, and we may remove content that violates them. Because the App's library is local, uninstalling it remains your choice and your data is not held by us.",
       },
     ],
   },
@@ -112,11 +111,15 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "The library data you enter — titles, progress, ratings, lists and notes — belongs to you. We claim no ownership of it. If you use an account, you grant us a limited licence to store, transmit and display that data solely to operate sync for you. We do not use it for advertising or sell it.",
+        text: "The library data you enter — titles, progress, ratings, lists, notes and custom entries — belongs to you. We claim no ownership of it and we never receive it. The App does not upload your library to us.",
       },
       {
         type: "p",
-        text: "You are responsible for your own backups. The App is designed to work offline and stores your library on your device, but devices get lost, reset and replaced. Export a backup from More → Export backup if the library matters to you. We are not liable for library data lost because a device was wiped, an app was uninstalled, or a backup was not made.",
+        text: "You are responsible for your own backups. The App is designed to work offline and stores your library on your device, but devices get lost, reset and replaced. Export a backup from More → Export backup if the library matters to you. We are not liable for library data lost because a device was wiped, an app was uninstalled, storage was cleared, or a backup was not made.",
+      },
+      {
+        type: "p",
+        text: "A backup is a plain JSON file that contains your library. Anyone who can read that file can read your library, so store backups somewhere you trust and delete copies you no longer need. Importing a backup replaces the library on that device; the original file is not modified.",
       },
       {
         type: "p",
@@ -139,7 +142,7 @@ const SECTIONS = [
           "TV series, episode and artwork data is provided in part by TheTVDB; anime data is provided in part by AniList.",
           "IMDb ratings shown in the App are informational data attributed to IMDb. The App is not endorsed by, affiliated with, or sponsored by IMDb.",
           "Streaming availability and OTT release dates are compiled from public sources and platform announcements and may lag behind the platform itself.",
-          "Google Play, Google Sign-In, Clerk and Supabase are services of their respective owners and are governed by their own terms.",
+          "Google Play is a service of Google and is governed by Google Play's own terms and policies.",
         ],
       },
       {
@@ -154,7 +157,7 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "The App is provided free of charge. We work to keep it running, but we do not promise uninterrupted or error-free operation. Features that depend on the internet — catalog search, ratings, release dates and sync — can be unavailable or delayed because of maintenance, provider outages or your connection.",
+        text: "The App is provided free of charge. We work to keep it running, but we do not promise uninterrupted or error-free operation. Features that depend on the internet — catalog search, ratings, release dates and artwork — can be unavailable or delayed because of maintenance, provider outages or your connection. The local library remains usable offline.",
       },
       {
         type: "p",
@@ -168,11 +171,15 @@ const SECTIONS = [
   },
   {
     id: "fees",
-    title: "Fees and paid features",
+    title: "Fees, advertising and paid features",
     blocks: [
       {
         type: "p",
-        text: "The App is currently free and contains no advertising. If we introduce paid features or subscriptions in the future, the price, billing terms and cancellation rules will be shown to you before you buy, and purchases made through Google Play will be governed by Google Play's payment terms. Nothing in these Terms obliges you to buy anything, and existing free features will not be made paid retroactively without clear notice.",
+        text: "The App is currently free, contains no advertising and has no in-app purchases or subscriptions. There are no ads in the App and no advertising SDKs.",
+      },
+      {
+        type: "p",
+        text: "If we introduce paid features or subscriptions in the future, the price, billing terms and cancellation rules will be shown to you before you buy, and purchases made through Google Play will be governed by Google Play's payment terms. Nothing in these Terms obliges you to buy anything, and existing free features will not be made paid retroactively without clear notice.",
       },
     ],
   },
@@ -204,7 +211,7 @@ const SECTIONS = [
       },
       {
         type: "p",
-        text: "You are responsible for keeping your own backups; a lost library caused by uninstalling, resetting or losing a device is not a loss we can restore.",
+        text: "You are responsible for keeping your own backups; a lost library caused by uninstalling, clearing storage, resetting or losing a device is not a loss we can restore.",
       },
     ],
   },
@@ -220,15 +227,15 @@ const SECTIONS = [
   },
   {
     id: "termination",
-    title: "Suspension and termination",
+    title: "Stopping use",
     blocks: [
       {
         type: "p",
-        text: "You may stop using the App at any time by uninstalling it and, if you have an account, deleting that account. We may suspend or end your access if you materially breach these Terms, if we are required to by law, or if continuing would expose other users or us to harm. Where reasonable, we will tell you why.",
+        text: "You may stop using the App at any time by uninstalling it. Because there is no account, there is no account to close and no server-side profile to delete. Uninstalling or clearing app storage removes the local library; export a backup first if you want to keep it.",
       },
       {
         type: "p",
-        text: "On termination, the licence granted to you ends. Sections about your content, third-party services, disclaimers, limitation of liability, indemnity and governing law survive termination.",
+        text: "We may suspend or end access to any service we operate if you materially breach these Terms, if we are required to by law, or if continuing would expose other users or us to harm. Where reasonable, we will tell you why. On termination, the licence granted to you ends. Sections about your content, third-party services, disclaimers, limitation of liability, indemnity and governing law survive termination.",
       },
     ],
   },
@@ -243,6 +250,16 @@ const SECTIONS = [
       {
         type: "p",
         text: "Before starting formal proceedings, please contact us at teraplayer.contact@gmail.com and give us 30 days to resolve the issue informally. Most concerns can be fixed quickly that way.",
+      },
+    ],
+  },
+  {
+    id: "google-play",
+    title: "Google Play",
+    blocks: [
+      {
+        type: "p",
+        text: "Watch Later is distributed through Google Play. Your use of Google Play is governed by Google Play's own terms and policies. Google is not a party to these Terms and does not sponsor or endorse the App. If you downloaded the App from Google Play, Google Play's refund rules apply to any purchase made through Google Play, but the App is currently free.",
       },
     ],
   },
@@ -262,7 +279,7 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "If any provision of these Terms is found unenforceable, the rest remains in force. Our failure to enforce a provision is not a waiver of it. You may not assign your rights under these Terms; we may assign ours as part of a merger, acquisition or sale of assets, subject to this policy continuing to apply. These Terms, together with the Privacy Policy, are the entire agreement between us about the App.",
+        text: "If any provision of these Terms is found unenforceable, the rest remains in force. Our failure to enforce a provision is not a waiver of it. You may not assign your rights under these Terms; we may assign ours as part of a merger, acquisition or sale of assets, subject to these Terms continuing to apply. These Terms, together with the Privacy Policy, are the entire agreement between us about the App.",
       },
     ],
   },
@@ -272,7 +289,11 @@ const SECTIONS = [
     blocks: [
       {
         type: "p",
-        text: "Questions about these Terms can be sent to teraplayer.contact@gmail.com. This is also the contact address published on our Google Play listing, and we aim to reply within 30 days.",
+        text: "Questions about these Terms can be sent to teraplayer.contact@gmail.com. This is also the developer contact address published on our Google Play listing, and we aim to reply within 30 days.",
+      },
+      {
+        type: "p",
+        text: "Developer: TeraPlayer. App: Watch Later (com.watchlater.app). These Terms apply to the Watch Later Android application and not to the TeraPlayer website, which has its own separate terms.",
       },
     ],
   },
@@ -282,16 +303,16 @@ export default function AppTerms() {
   return (
     <>
       <Seo
-        title="Watch Later App Terms & Conditions | TeraPlayer"
-        description="The terms that govern use of the Watch Later Android app: licence, acceptable use, your library and backups, third-party metadata, disclaimers and liability."
-        path="/terms-and-conditions"
-        robots="noindex, follow"
+        title="Watch Later Terms & Conditions | TeraPlayer"
+        description="The terms that govern use of the Watch Later Android app: licence, acceptable use, your local library and backups, third-party metadata, disclaimers and liability."
+        path="/watchlater-terms-and-conditions"
+        robots="noindex, nofollow"
       />
       <LegalDocument
         eyebrow="Terms & Conditions"
         title="Watch Later Terms & Conditions"
         intro="These terms govern your use of the Watch Later Android app — a personal tracker for movies, TV series and anime. They explain the licence you get, what you may and may not do, and the limits of what we promise."
-        updated="5 November 2026"
+        updated="6 November 2026"
         version="1.0.5 and later"
         summary={[
           {
@@ -302,7 +323,7 @@ export default function AppTerms() {
           {
             kicker: "Your data",
             title: "Your library stays yours",
-            body: "You own what you add. Keep backups for anything important; uninstalling removes local data.",
+            body: "You own what you add. It stays on your device; keep a backup for anything important.",
           },
           {
             kicker: "Fair use",
@@ -311,7 +332,7 @@ export default function AppTerms() {
           },
         ]}
         sections={SECTIONS}
-        otherPage={{ to: "/privacy-policy", label: "Privacy Policy for Watch Later" }}
+        otherPage={{ to: "/watchlater-privacypolicy", label: "Privacy Policy for Watch Later" }}
       />
     </>
   );

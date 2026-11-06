@@ -52,7 +52,28 @@ const APP_LEGAL_ROUTES = [
   "/watchlater-terms-and-conditions",
 ];
 
+// Older app builds linked to these paths. Write a host-agnostic redirect for
+// each so they keep working even on a host with no SPA fallback configured.
+const LEGACY_LEGAL_REDIRECTS = {
+  "/privacy-policy": "/watchlater-privacypolicy",
+  "/terms-and-conditions": "/watchlater-terms-and-conditions",
+};
+
 const ROUTES = [...BASE_ROUTES, ...blogRoutes, ...APP_LEGAL_ROUTES];
+
+// The shared index.html carries the site's consent, analytics and ad loaders.
+// The Watch Later app legal pages must not contain any of that, so strip those
+// inline script blocks from their prerendered snapshots. The runtime guard in
+// index.html also prevents them from firing on these paths, but removing the
+// code from the document itself keeps the source clean for reviewers.
+function stripSiteTrackers(html) {
+  return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (tag) => {
+    if (/profitableratecpmnetwork|googletagmanager|posthog|teraplayer-consent|__tpLegalPage/i.test(tag)) {
+      return "";
+    }
+    return tag;
+  });
+}
 
 // Fail the build when prerendering fails so a blank-shell deploy can never
 // ship silently. Opt out with PRERENDER_STRICT=0 (not recommended ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â
@@ -248,15 +269,44 @@ async function main() {
           )
           .forEach((s) => s.remove());
       });
-      const html = await page.evaluate(
+      const rawHtml = await page.evaluate(
         () => "<!doctype html>\n" + document.documentElement.outerHTML
       );
+      const html = APP_LEGAL_ROUTES.includes(route)
+        ? stripSiteTrackers(rawHtml)
+        : rawHtml;
       const outDir = route === "/" ? BUILD_DIR : path.join(BUILD_DIR, route.slice(1));
       fs.mkdirSync(outDir, { recursive: true });
       fs.writeFileSync(path.join(outDir, "index.html"), html);
       console.log(`[prerender] ${route} -> ${(html.length / 1024).toFixed(1)} KB html`);
       await page.close();
     }
+
+    for (const [from, to] of Object.entries(LEGACY_LEGAL_REDIRECTS)) {
+      const target = JSON.stringify(to);
+      const html = [
+        "<!doctype html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        '<meta name="robots" content="noindex, nofollow">',
+        `<title>Watch Later legal page has moved</title>`,
+        `<link rel="canonical" href="https://teraplayer.in${to}">`,
+        `<meta http-equiv="refresh" content="0; url=${to}">`,
+        `<script>location.replace(${target} + location.search + location.hash);</script>`,
+        "</head>",
+        "<body>",
+        `<p>This page has moved to <a href="${to}">${to}</a>.</p>`,
+        "</body>",
+        "</html>",
+      ].join("\n");
+      const outDir = path.join(BUILD_DIR, from.slice(1));
+      fs.mkdirSync(outDir, { recursive: true });
+      fs.writeFileSync(path.join(outDir, "index.html"), html);
+      console.log(`[prerender] ${from} -> redirect to ${to}`);
+    }
+
     console.log(`[prerender] done: ${ROUTES.length} routes prerendered`);
   } finally {
     await browser.close();

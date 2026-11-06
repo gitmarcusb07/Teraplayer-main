@@ -86,8 +86,6 @@ function PublicShell() {
             <Route path="/meet-the-dev" element={<Navigate to="/about" replace />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/privacy-policy" element={<AppPrivacyPolicy />} />
-            <Route path="/terms-and-conditions" element={<AppTerms />} />
             <Route path="/about-teraplayer" element={<Navigate to="/about" replace />} />
             <Route path="/copyright" element={<Navigate to="/contact" replace />} />
             <Route path="/help-center" element={<HelpCenter />} />
@@ -299,6 +297,53 @@ function SkipLink() {
   );
 }
 
+// Site-wide structured data belongs to teraplayer.in only. The Watch Later app
+// legal pages are standalone documents, so they must not inherit this.
+function SiteMeta() {
+  return (
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "TeraPlayer",
+          url: "https://www.teraplayer.in/",
+          description: "Watch, stream and download TeraBox videos online for free.",
+          inLanguage: "en",
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "TeraPlayer",
+          url: "https://www.teraplayer.in/",
+          logo: "https://www.teraplayer.in/logo.png",
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "TeraPlayer",
+          url: "https://www.teraplayer.in/",
+          applicationCategory: "MultimediaApplication",
+          operatingSystem: "All",
+          browserRequirements: "Requires JavaScript",
+          description: "Free online TeraBox video player and downloader.",
+        })}
+      </script>
+    </Helmet>
+  );
+}
+
+// Standalone route: deliberately bypasses the site header/footer, consent
+// banner, maintenance gate and structured data. These documents exist only
+// for the Watch Later Android app and its Google Play listing.
+function AppLegalRoute({ children }) {
+  return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
+}
+
 function App() {
   return (
     <ThemeProvider>
@@ -306,44 +351,37 @@ function App() {
       <HelmetProvider>
         <MotionConfig reducedMotion="user">
           <div className="App noise">
-          <Helmet>
-            <script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                name: "TeraPlayer",
-                url: "https://www.teraplayer.in/",
-                description: "Watch, stream and download TeraBox videos online for free.",
-                inLanguage: "en",
-              })}
-            </script>
-            <script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                name: "TeraPlayer",
-                url: "https://www.teraplayer.in/",
-                logo: "https://www.teraplayer.in/logo.png",
-              })}
-            </script>
-            <script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebApplication",
-                name: "TeraPlayer",
-                url: "https://www.teraplayer.in/",
-                applicationCategory: "MultimediaApplication",
-                operatingSystem: "All",
-                browserRequirements: "Requires JavaScript",
-                description: "Free online TeraBox video player and downloader.",
-              })}
-            </script>
-          </Helmet>
-          <SkipLink />
           <BrowserRouter>
             <Routes>
               <Route path="/admin/*" element={<AdminShell />} />
-              <Route path="*" element={<MaintenanceGate><PublicShell /></MaintenanceGate>} />
+              <Route
+                path="/watchlater-privacypolicy"
+                element={<AppLegalRoute><AppPrivacyPolicy /></AppLegalRoute>}
+              />
+              <Route
+                path="/watchlater-terms-and-conditions"
+                element={<AppLegalRoute><AppTerms /></AppLegalRoute>}
+              />
+              {/* Earlier app builds pointed at these paths. Redirect them to
+                  the canonical standalone documents instead of breaking. */}
+              <Route
+                path="/privacy-policy"
+                element={<Navigate to="/watchlater-privacypolicy" replace />}
+              />
+              <Route
+                path="/terms-and-conditions"
+                element={<Navigate to="/watchlater-terms-and-conditions" replace />}
+              />
+              <Route
+                path="*"
+                element={
+                  <>
+                    <SiteMeta />
+                    <SkipLink />
+                    <MaintenanceGate><PublicShell /></MaintenanceGate>
+                  </>
+                }
+              />
             </Routes>
             <Toaster
               position="bottom-right"

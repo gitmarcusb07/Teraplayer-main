@@ -5,6 +5,16 @@
     <!-- Consent-gating for analytics/advertising cookies (see Privacy Policy) -->
     <script>
         (function () {
+            var p = window.location.pathname.replace(/\/+$/, "") || "/";
+            // The Watch Later app legal pages are standalone documents: no
+            // analytics, no advertising, no consent banner and no site chrome.
+            window.__tpLegalPage =
+                p === "/watchlater-privacypolicy" ||
+                p === "/watchlater-terms-and-conditions" ||
+                // Legacy paths used by earlier app builds. They redirect to
+                // the canonical pages, but must never load ads on the way.
+                p === "/privacy-policy" ||
+                p === "/terms-and-conditions";
             var c = null;
             try {
                 c = localStorage.getItem("teraplayer-consent");
@@ -14,22 +24,26 @@
             window.__tpConsent =
                 c === "accepted" ? "accepted" : c === "declined" ? "declined" : null;
             window.__tpConsentAccepted = function () {
-                return window.__tpConsent === "accepted";
+                return !window.__tpLegalPage && window.__tpConsent === "accepted";
             };
         })();
     </script>
 
-    <!-- Google tag (gtag.js) — analytics only after consent -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBGDNNC6ZK"></script>
+    <!-- Google tag (gtag.js) — analytics only after consent, never on the
+         standalone Watch Later app legal pages. -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
         window.__tpGtagInited = false;
         window.__tpInitGtag = function () {
-            if (window.__tpGtagInited) return;
+            if (window.__tpLegalPage || window.__tpGtagInited) return;
             window.__tpGtagInited = true;
+            var s = document.createElement("script");
+            s.async = true;
+            s.src = "https://www.googletagmanager.com/gtag/js?id=G-CBGDNNC6ZK";
+            document.head.appendChild(s);
+            gtag('js', new Date());
             gtag('config', 'G-CBGDNNC6ZK');
         };
         if (window.__tpConsentAccepted()) window.__tpInitGtag();
@@ -81,10 +95,12 @@
       tag stays removed until the site is approved, so no advertising cookies
       are set and crawlers see no "waiting for approval" signals.
     -->
-<!-- Adsterra Popunder — skipped on admin pages (/admin/*) and while prerendering -->
+<!-- Adsterra Popunder — skipped on admin pages (/admin/*), the standalone
+     Watch Later app legal pages, and while prerendering -->
 <script>
     (function () {
         if (window.__TP_PRERENDER__ === true) return;
+        if (window.__tpLegalPage) return;
         if (window.location.pathname.indexOf("/admin") === 0) return;
         var s = document.createElement("script");
         s.async = true;
@@ -171,7 +187,7 @@
         })(document, window.posthog || []);
         window.__tpPosthogInited = false;
         window.__tpInitPosthog = function () {
-            if (window.__tpPosthogInited) return;
+            if (window.__tpLegalPage || window.__tpPosthogInited) return;
             window.__tpPosthogInited = true;
             posthog.init("phc_DbsPb39SRc8z3EiQ6Dhj6ikv4H4rTKcht9d4sZSesceP", {
                 api_host: "https://ap.emergent.sh",
@@ -181,10 +197,12 @@
         };
         if (window.__tpConsentAccepted()) window.__tpInitPosthog();
     </script>
-<!-- Adsterra Social Bar — skipped on admin pages (/admin/*) and while prerendering -->
+<!-- Adsterra Social Bar — skipped on admin pages (/admin/*), the standalone
+     Watch Later app legal pages, and while prerendering -->
 <script>
     (function () {
         if (window.__TP_PRERENDER__ === true) return;
+        if (window.__tpLegalPage) return;
         if (window.location.pathname.indexOf("/admin") === 0) return;
         var s = document.createElement("script");
         s.async = true;
