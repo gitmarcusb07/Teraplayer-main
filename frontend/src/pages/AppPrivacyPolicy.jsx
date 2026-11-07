@@ -346,7 +346,7 @@ export default function AppPrivacyPolicy() {
         title="Privacy Policy"
         intro="Watch Later is a personal movie, TV and anime tracker. Your library stays on your phone, there is no account, and the app contains no ads or tracking. This policy explains exactly what is stored, what the app sends when it loads catalog data, and how you can delete it."
         updated="6 November 2026"
-        version="1.0.5 and later"
+        version="1.0.6 and later"
         summary={[
           {
             kicker: "On your device",

@@ -314,7 +314,7 @@ export default function AppTerms() {
         title="Terms & Conditions"
         intro="These terms govern your use of the Watch Later Android app — a personal tracker for movies, TV series and anime. They explain the licence you get, what you may and may not do, and the limits of what we promise."
         updated="6 November 2026"
-        version="1.0.5 and later"
+        version="1.0.6 and later"
         contactBody="Email us and we will reply within 30 days. We are happy to answer questions about these Terms, the licence or anything else in this document."
         summary={[
           {
