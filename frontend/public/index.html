@@ -15,6 +15,11 @@
                 // the canonical pages, but must never load ads on the way.
                 p === "/privacy-policy" ||
                 p === "/terms-and-conditions";
+            // The legal pages use the app's dark theme. Flag the document early
+            // so the first paint never flashes the website's light background.
+            if (window.__tpLegalPage) {
+                document.documentElement.classList.add("wl-legal-route");
+            }
             var c = null;
             try {
                 c = localStorage.getItem("teraplayer-consent");
@@ -52,6 +57,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light dark" />
+
+    <!-- Watch Later app legal pages use the app's dark canvas from the very
+         first paint (React updates the same values once it mounts). -->
+    <script>
+        (function () {
+            if (!window.__tpLegalPage) return;
+            var theme = document.querySelector('meta[name="theme-color"]');
+            var scheme = document.querySelector('meta[name="color-scheme"]');
+            if (theme) theme.setAttribute("content", "#0A0A0C");
+            if (scheme) scheme.setAttribute("content", "dark");
+        })();
+    </script>
+    <style>
+        html.wl-legal-route,
+        html.wl-legal-route body {
+            color-scheme: dark;
+            background-color: #0a0a0c !important;
+            background-image: none !important;
+        }
+    </style>
 
     <!-- NOTE: no static title/meta/OG tags here on purpose. React Helmet owns
       them per route (see src/components/Seo.jsx); the prerender script bakes

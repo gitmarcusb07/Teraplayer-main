@@ -309,11 +309,13 @@ export default function AppTerms() {
         robots="noindex, nofollow"
       />
       <LegalDocument
-        eyebrow="Terms & Conditions"
-        title="Watch Later Terms & Conditions"
+        activeDoc="terms"
+        eyebrow="Watch Later · Terms"
+        title="Terms & Conditions"
         intro="These terms govern your use of the Watch Later Android app — a personal tracker for movies, TV series and anime. They explain the licence you get, what you may and may not do, and the limits of what we promise."
         updated="6 November 2026"
         version="1.0.5 and later"
+        contactBody="Email us and we will reply within 30 days. We are happy to answer questions about these Terms, the licence or anything else in this document."
         summary={[
           {
             kicker: "The app",
@@ -332,7 +334,6 @@ export default function AppTerms() {
           },
         ]}
         sections={SECTIONS}
-        otherPage={{ to: "/watchlater-privacypolicy", label: "Privacy Policy for Watch Later" }}
       />
     </>
   );

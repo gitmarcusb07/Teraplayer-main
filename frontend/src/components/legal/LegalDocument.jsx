@@ -1,70 +1,86 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  ArrowUp,
+  Bookmark,
+  CalendarDays,
+  Clock,
+  EyeOff,
+  FileText,
+  HardDriveDownload,
+  Mail,
+  Scale,
+  ShieldCheck,
+  Smartphone,
+  Tag,
+} from "lucide-react";
+import "./legal.css";
 
 /**
  * Standalone legal document shell for the Watch Later Android app pages.
+ *
+ * The visual language intentionally mirrors the app, not the TeraPlayer
+ * website: system typography, #0A0A0C canvas, #16161C surface cards, thin
+ * #26262E hairlines and the app's #A855F7 accent.
  *
  * Deliberately has NO site header, footer or navigation: these pages are
  * reached only from the app (and from a store listing), never from the
  * TeraPlayer website itself. They also never link back to the site home.
  */
 
-function NumberBadge({ index }) {
-  return (
-    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-secondary text-[11px] font-semibold tabular-nums text-muted-foreground">
-      {String(index + 1).padStart(2, "0")}
-    </span>
-  );
-}
+const TABS = [
+  {
+    id: "privacy",
+    to: "/watchlater-privacypolicy",
+    label: "Privacy Policy",
+    Icon: ShieldCheck,
+  },
+  {
+    id: "terms",
+    to: "/watchlater-terms-and-conditions",
+    label: "Terms & Conditions",
+    Icon: FileText,
+  },
+];
+
+const SUMMARY_ICONS = {
+  privacy: [ShieldCheck, Smartphone, EyeOff],
+  terms: [FileText, HardDriveDownload, Scale],
+};
+
+const SUMMARY_ICON_FALLBACK = [ShieldCheck, Smartphone, EyeOff];
 
 function Blocks({ blocks }) {
   return (
-    <div className="mt-4 space-y-4">
+    <div className="wl-blocks">
       {blocks.map((block, i) => {
         if (block.type === "list") {
           return (
-            <ul key={i} className="space-y-2 pl-1">
+            <ul key={i} className="wl-list">
               {block.items.map((item, j) => (
-                <li key={j} className="flex gap-3 text-sm leading-7 text-muted-foreground">
-                  <span aria-hidden="true" className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                  <span>{item}</span>
-                </li>
+                <li key={j}>{item}</li>
               ))}
             </ul>
           );
         }
         if (block.type === "table") {
           return (
-            <div key={i} className="overflow-hidden rounded-xl border border-border">
-              <table className="block w-full border-collapse text-left text-sm sm:table">
-                <thead className="hidden bg-secondary sm:table-header-group">
+            <div key={i} className="wl-table-wrap">
+              <table className="wl-table">
+                <thead>
                   <tr>
                     {block.head.map((cell) => (
-                      <th key={cell} className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-foreground">
+                      <th key={cell} scope="col">
                         {cell}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="block sm:table-row-group">
+                <tbody>
                   {block.rows.map((row, r) => (
-                    <tr
-                      key={r}
-                      className="block border-t border-border align-top first:border-t-0 sm:table-row sm:first:border-t"
-                    >
+                    <tr key={r}>
                       {row.map((cell, c) => (
-                        <td
-                          key={c}
-                          className={
-                            c === 0
-                              ? "block px-4 pb-1 pt-3 text-sm font-semibold text-foreground sm:table-cell sm:p-3 sm:font-medium"
-                              : "block px-4 py-2.5 text-muted-foreground sm:table-cell sm:p-3"
-                          }
-                        >
-                          {c > 0 ? (
-                            <span className="mb-1 block text-[10px] font-semibold uppercase tracking-wide text-muted-foreground sm:hidden">
-                              {block.head[c]}
-                            </span>
-                          ) : null}
+                        <td key={c} data-label={block.head[c] || ""}>
                           {cell}
                         </td>
                       ))}
@@ -76,7 +92,7 @@ function Blocks({ blocks }) {
           );
         }
         return (
-          <p key={i} className="text-sm leading-7 text-muted-foreground">
+          <p key={i} className="wl-p">
             {block.text}
           </p>
         );
@@ -93,110 +109,212 @@ export default function LegalDocument({
   version,
   summary,
   sections,
+  activeDoc = "privacy",
   contactEmail = "teraplayer.contact@gmail.com",
-  otherPage,
+  contactBody = "Email us and we will reply within 30 days. Watch Later keeps your library on your device, so there is no online account to manage — but we are happy to answer questions about this document or help with a data request.",
 }) {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Brand strip — text only, intentionally not a link. */}
-      <div className="border-b border-border/70 bg-card/60">
-        <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-5 py-5 sm:px-8">
-          <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent text-sm font-black text-primary-foreground shadow-sm">
-              W
-            </span>
-            <div className="leading-tight">
-              <p className="text-sm font-semibold tracking-tight">Watch Later</p>
-              <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                Android app legal
-              </p>
-            </div>
-          </div>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-            TeraPlayer
-          </p>
-        </div>
-      </div>
+  const [activeSection, setActiveSection] = useState(null);
+  const summaryIcons = SUMMARY_ICONS[activeDoc] || SUMMARY_ICON_FALLBACK;
+  const versionLabel = version ? `v${version.replace(/\s+and later$/i, "+")}` : null;
 
-      <header className="relative overflow-hidden border-b border-border/70">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_120%_at_15%_0%,hsl(var(--primary)/0.16),transparent_60%),radial-gradient(50%_110%_at_90%_0%,hsl(var(--accent)/0.14),transparent_55%)]"
-        />
-        <div className="relative mx-auto w-full max-w-5xl px-5 pb-10 pt-12 sm:px-8">
-          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            {eyebrow}
-          </p>
-          <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-[44px]">
-            {title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
-            {intro}
-          </p>
-          <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-xs sm:text-sm">
-            <div>
-              <dt className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Applies to</dt>
-              <dd className="mt-1 font-medium">Watch Later for Android</dd>
-            </div>
-            <div>
-              <dt className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Effective</dt>
-              <dd className="mt-1 font-medium">{updated}</dd>
-            </div>
-            <div>
-              <dt className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">App version</dt>
-              <dd className="mt-1 font-medium">{version}</dd>
-            </div>
-            <div>
-              <dt className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Contact</dt>
-              <dd className="mt-1 font-medium">{contactEmail}</dd>
-            </div>
-          </dl>
+  // Keep the browser chrome dark for this standalone route, and make it
+  // possible for the inline shell in public/index.html to paint the right
+  // background before React mounts.
+  useEffect(() => {
+    const root = document.documentElement;
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    const schemeMeta = document.querySelector('meta[name="color-scheme"]');
+    const previousTheme = themeMeta?.getAttribute("content") ?? null;
+    const previousScheme = schemeMeta?.getAttribute("content") ?? null;
+
+    root.classList.add("wl-legal-route");
+    themeMeta?.setAttribute("content", "#0A0A0C");
+    schemeMeta?.setAttribute("content", "dark");
+
+    return () => {
+      root.classList.remove("wl-legal-route");
+      if (previousTheme !== null) themeMeta?.setAttribute("content", previousTheme);
+      if (previousScheme !== null) schemeMeta?.setAttribute("content", previousScheme);
+    };
+  }, []);
+
+  useEffect(() => {
+    // The prerendered snapshot is captured after the crawler scrolls the page,
+    // which would freeze a late "active section" into the HTML and cause a
+    // hydration mismatch. Leave the initial state (no active item) in the
+    // snapshot; the real browser sets it immediately after hydration.
+    if (window.__TP_PRERENDER__ === true) return undefined;
+
+    const hashId = window.location.hash.replace(/^#/, "");
+    const firstId = sections.some((section) => section.id === hashId)
+      ? hashId
+      : sections[0]?.id;
+
+    setActiveSection(firstId);
+
+    if (typeof IntersectionObserver === "undefined") return undefined;
+
+    const elements = sections
+      .map((section) => document.getElementById(section.id))
+      .filter(Boolean);
+
+    if (!elements.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-18% 0px -62% 0px", threshold: 0 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [sections]);
+
+  return (
+    <div className="wl-legal">
+      <a className="wl-skip" href="#legal-content">
+        Skip to document
+      </a>
+
+      <header className="wl-topbar">
+        <div className="wl-shell wl-topbar__inner">
+          <div className="wl-brand">
+            <span className="wl-brand__mark" aria-hidden="true">
+              <Bookmark size={15} strokeWidth={2.5} fill="currentColor" />
+            </span>
+            <span className="wl-brand__name">Watch Later</span>
+          </div>
+          <span className="wl-status">
+            <span className="wl-status__dot" aria-hidden="true" />
+            No ads
+            <span className="wl-status__extra"> · No tracking</span>
+          </span>
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-5xl px-5 pb-20 pt-10 sm:px-8">
-        {summary?.length ? (
-          <div className="mb-10 grid gap-3 sm:grid-cols-3">
-            {summary.map((card) => (
-              <div key={card.title} className="rounded-2xl border border-border bg-card p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">{card.kicker}</p>
-                <p className="mt-2 text-sm font-semibold leading-6">{card.title}</p>
-                <p className="mt-1 text-xs leading-6 text-muted-foreground">{card.body}</p>
-              </div>
-            ))}
-          </div>
-        ) : null}
+      <main>
+        <section className="wl-hero wl-shell" aria-labelledby="legal-title">
+          <p className="wl-eyebrow">{eyebrow}</p>
+          <h1 className="wl-title" id="legal-title">
+            {title}
+          </h1>
+          <p className="wl-intro">{intro}</p>
 
-        <div className="grid gap-10 lg:grid-cols-[230px_minmax(0,1fr)] lg:items-start">
-          <nav aria-label="On this page" className="hidden lg:sticky lg:top-8 lg:block">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              On this page
-            </p>
-            <ol className="mt-3 space-y-1">
-              {sections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className="block rounded-lg px-2 py-1.5 text-[13px] leading-5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                  >
-                    {section.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
+          <ul className="wl-meta" aria-label="Document details">
+            <li className="wl-chip">
+              <Smartphone size={14} aria-hidden="true" />
+              <span>Watch Later for Android</span>
+            </li>
+            <li className="wl-chip">
+              <CalendarDays size={14} aria-hidden="true" />
+              <span>
+                Effective <strong>{updated}</strong>
+              </span>
+            </li>
+            {versionLabel ? (
+              <li className="wl-chip">
+                <Tag size={14} aria-hidden="true" />
+                <span>{versionLabel}</span>
+              </li>
+            ) : null}
+          </ul>
+        </section>
+
+        <div className="wl-shell wl-tabs-wrap">
+          <nav className="wl-tabs" aria-label="Watch Later legal documents">
+            {TABS.map(({ id, to, label, Icon }) => (
+              <Link
+                key={id}
+                to={to}
+                className={`wl-tab${activeDoc === id ? " wl-tab--active" : ""}`}
+                aria-current={activeDoc === id ? "page" : undefined}
+              >
+                <Icon size={15} aria-hidden="true" />
+                {label}
+              </Link>
+            ))}
           </nav>
 
-          <div>
+          {summary?.length ? (
+            <ul className="wl-summary">
+              {summary.map((card, index) => {
+                const Icon = summaryIcons[index % summaryIcons.length];
+                return (
+                  <li key={card.title} className="wl-summary__card">
+                    <span className="wl-summary__icon" aria-hidden="true">
+                      <Icon size={18} strokeWidth={2} />
+                    </span>
+                    <p className="wl-summary__kicker">{card.kicker}</p>
+                    <p className="wl-summary__title">{card.title}</p>
+                    <p className="wl-summary__body">{card.body}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : null}
+        </div>
+
+        <div className="wl-shell wl-layout" id="legal-content">
+          <aside className="wl-side">
+            <p className="wl-side__label">On this page</p>
+            <nav className="wl-side__nav" aria-label="Document sections">
+              {sections.map((section, index) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className={`wl-side__link${activeSection === section.id ? " is-active" : ""}`}
+                  aria-current={activeSection === section.id ? "location" : undefined}
+                >
+                  <span className="wl-side__num" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>{section.title}</span>
+                </a>
+              ))}
+            </nav>
+
+            <div className="wl-side__help">
+              <p className="wl-side__help-top">
+                <Mail size={15} aria-hidden="true" />
+                Need help?
+              </p>
+              <p>Email us about this document and we will reply within 30 days.</p>
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </div>
+          </aside>
+
+          <div className="wl-doc">
+            <nav className="wl-mobile-toc" aria-label="Document sections">
+              {sections.map((section, index) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className={activeSection === section.id ? "is-active" : undefined}
+                  aria-current={activeSection === section.id ? "location" : undefined}
+                >
+                  <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  {section.title}
+                </a>
+              ))}
+            </nav>
+
             {sections.map((section, index) => (
               <section
                 key={section.id}
                 id={section.id}
-                className="mb-4 scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-[0_8px_26px_rgba(12,27,20,0.03)] sm:p-7"
+                className="wl-section"
+                aria-labelledby={`${section.id}-title`}
               >
-                <div className="flex items-start gap-3">
-                  <NumberBadge index={index} />
-                  <h2 className="pt-1 text-base font-semibold leading-6 tracking-tight sm:text-lg">
+                <div className="wl-section__head">
+                  <span className="wl-section__num" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h2 className="wl-section__title" id={`${section.id}-title`}>
                     {section.title}
                   </h2>
                 </div>
@@ -204,38 +322,75 @@ export default function LegalDocument({
               </section>
             ))}
 
-            <section className="relative mt-6 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.09] via-card to-accent/[0.09] p-6 sm:p-7">
-              <h2 className="text-base font-semibold tracking-tight">Questions about this document?</h2>
-              <p className="mt-2 max-w-xl text-sm leading-7 text-muted-foreground">
-                Email us and we will reply within 30 days. The app has no accounts and keeps your
-                library on your device, so there is no online account to delete — but we are happy
-                to answer privacy questions or help with a data request.
+            <section className="wl-contact" aria-labelledby="legal-contact-title">
+              <span className="wl-contact__icon" aria-hidden="true">
+                <Mail size={20} strokeWidth={2} />
+              </span>
+              <h2 className="wl-contact__title" id="legal-contact-title">
+                Questions about this document?
+              </h2>
+              <p className="wl-contact__body">
+                {contactBody}
               </p>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                {contactEmail}
-              </a>
+              <div className="wl-contact__actions">
+                <a className="wl-contact__button" href={`mailto:${contactEmail}`}>
+                  <Mail size={16} aria-hidden="true" />
+                  {contactEmail}
+                </a>
+                <span className="wl-contact__note">
+                  <Clock size={13} aria-hidden="true" />
+                  Usually within 30 days
+                </span>
+              </div>
             </section>
-
-            {otherPage ? (
-              <p className="mt-6 text-sm text-muted-foreground">
-                See also:{" "}
-                <Link to={otherPage.to} className="font-medium text-primary underline underline-offset-4">
-                  {otherPage.label}
-                </Link>
-              </p>
-            ) : null}
-
-            <p className="mt-8 text-xs leading-6 text-muted-foreground">
-              Watch Later is published by TeraPlayer. This document is provided for the Watch Later
-              Android application and does not describe the TeraPlayer website, which has its own
-              separate policies.
-            </p>
           </div>
         </div>
       </main>
+
+      <footer className="wl-footer">
+        <div className="wl-shell wl-footer__inner">
+          <div className="wl-footer__top">
+            <div className="wl-footer__brand">
+              <span className="wl-brand__mark" aria-hidden="true">
+                <Bookmark size={13} strokeWidth={2.5} fill="currentColor" />
+              </span>
+              <div>
+                <p className="wl-footer__brandname">Watch Later</p>
+                <p className="wl-footer__appid">com.watchlater.app</p>
+              </div>
+            </div>
+
+            <div className="wl-footer__badges">
+              <span className="wl-footer__badge">
+                <ShieldCheck size={13} aria-hidden="true" />
+                No ads
+              </span>
+              <span className="wl-footer__badge">
+                <EyeOff size={13} aria-hidden="true" />
+                No tracking
+              </span>
+              <span className="wl-footer__badge">
+                <HardDriveDownload size={13} aria-hidden="true" />
+                Local-first
+              </span>
+            </div>
+          </div>
+
+          <div className="wl-footer__bottom">
+            <p className="wl-footer__note">
+              Watch Later is published by TeraPlayer. This document is provided for the Watch
+              Later Android application and does not describe the TeraPlayer website, which
+              has its own separate policies.
+            </p>
+            <div className="wl-footer__meta">
+              <span>© 2026 TeraPlayer</span>
+              <a className="wl-backtop" href="#legal-content" aria-label="Back to top">
+                <ArrowUp size={15} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
