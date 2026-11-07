@@ -1,0 +1,40 @@
+{
+  "headers": [
+    {
+      "source": "/watchlater-privacypolicy",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate, no-transform"
+        }
+      ]
+    },
+    {
+      "source": "/watchlater-terms-and-conditions",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate, no-transform"
+        }
+      ]
+    },
+    {
+      "source": "/privacy-policy",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate, no-transform"
+        }
+      ]
+    },
+    {
+      "source": "/terms-and-conditions",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate, no-transform"
+        }
+      ]
+    }
+  ]
+}

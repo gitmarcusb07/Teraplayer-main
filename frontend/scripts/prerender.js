@@ -75,6 +75,17 @@ function stripSiteTrackers(html) {
   });
 }
 
+// Cloudflare's Email Address Obfuscation rewrites mailto links and injects a
+// decode script into proxied HTML. These pages must keep direct mailto links
+// and load no extra scripts, so mark the body as off-limits. The Vercel
+// Cache-Control: no-transform header also suppresses edge rewriting; this
+// comment is a second line of defence if that header is ever dropped.
+function markEmailOff(html) {
+  return html
+    .replace(/<body([^>]*)>/i, "<body$1><!--email_off-->")
+    .replace(/<\/body>/i, "<!--/email_off--></body>");
+}
+
 // Fail the build when prerendering fails so a blank-shell deploy can never
 // ship silently. Opt out with PRERENDER_STRICT=0 (not recommended ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â
 // crawlers/reviewers would see an empty page).
@@ -273,7 +284,7 @@ async function main() {
         () => "<!doctype html>\n" + document.documentElement.outerHTML
       );
       const html = APP_LEGAL_ROUTES.includes(route)
-        ? stripSiteTrackers(rawHtml)
+        ? markEmailOff(stripSiteTrackers(rawHtml))
         : rawHtml;
       const outDir = route === "/" ? BUILD_DIR : path.join(BUILD_DIR, route.slice(1));
       fs.mkdirSync(outDir, { recursive: true });
@@ -303,7 +314,7 @@ async function main() {
       ].join("\n");
       const outDir = path.join(BUILD_DIR, from.slice(1));
       fs.mkdirSync(outDir, { recursive: true });
-      fs.writeFileSync(path.join(outDir, "index.html"), html);
+      fs.writeFileSync(path.join(outDir, "index.html"), markEmailOff(html));
       console.log(`[prerender] ${from} -> redirect to ${to}`);
     }
 
