@@ -67,7 +67,11 @@ const ROUTES = [...BASE_ROUTES, ...blogRoutes, ...APP_LEGAL_ROUTES];
 // index.html also prevents them from firing on these paths, but removing the
 // code from the document itself keeps the source clean for reviewers.
 function stripSiteTrackers(html) {
-  return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (tag) => {
+  // The legal pages use the app's system font stack, so the website's Google
+  // Fonts request is unnecessary third-party traffic. Remove the preconnects
+  // and stylesheet so the document loads nothing from Google.
+  const withoutFonts = html.replace(/<link\b[^>]*fonts\.(?:googleapis|gstatic)\.com[^>]*>/gi, "");
+  return withoutFonts.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (tag) => {
     if (/profitableratecpmnetwork|googletagmanager|posthog|teraplayer-consent|__tpLegalPage/i.test(tag)) {
       return "";
     }
