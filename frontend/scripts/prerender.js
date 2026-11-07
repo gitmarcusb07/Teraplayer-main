@@ -256,6 +256,22 @@ async function main() {
         window.__TP_PRERENDER__ = true;
       });
       await page.setViewport({ width: 1366, height: 900 });
+      // Snapshot content must not depend on remote image bytes. A slow or
+      // unreachable third-party image (Wikimedia, CDNs) otherwise keeps a
+      // connection open forever and blocks the strict networkidle0 wait,
+      // failing the whole prerender even though the page rendered fine.
+      // Aborting only the binary fetch keeps every URL in the DOM, so the
+      // saved HTML and real visitors are unaffected.
+      await page.setRequestInterception(true);
+      page.on("request", (request) => {
+        const isLocal = request.url().startsWith(`http://127.0.0.1:${port}/`);
+        const type = request.resourceType();
+        if (!isLocal && (type === "image" || type === "media" || type === "font")) {
+          request.abort();
+          return;
+        }
+        request.continue();
+      });
       await page.goto(`http://127.0.0.1:${port}${route}`, {
         waitUntil: "networkidle0",
         timeout: 90000,
