@@ -142,7 +142,7 @@ export default function LegalDocument({
         <div className="hero-inner">
           <div className="brand-row" aria-label="Watch Later">
             <span className="brand-mark" aria-hidden="true">
-              📖
+              <img src="/logo.png" alt="" width="42" height="42" />
             </span>
             <span className="brand-name">
               Watch Later<span className="brand-sub">Android app privacy</span>
