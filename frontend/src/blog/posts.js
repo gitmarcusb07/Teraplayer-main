@@ -30,6 +30,48 @@
 
 export const posts = [
 {
+    slug: "dragon-quest-rpg-cursed-tree-chosen-isle-trailer-closed-beta-2027-november-2026",
+    image: "https://cache-www.dragonquest.jp/dqrpg/root/20261105/common/images/global/top/keyvisual.jpg",
+    imageAlt: "Official key art for Dragon Quest RPG The Cursed Tree and the Chosen Isle: the blue-cloaked hero and a slime look up at the cursed tree on its floating island (image: Square Enix)",
+    title: "Dragon Quest RPG The Cursed Tree and the Chosen Isle Trailer: Closed Beta, 2027 Release Window and Everything Shown",
+    description:
+      "Dragon Quest RPG The Cursed Tree and the Chosen Isle trailer reveals a closed beta, December testing and a 2027 launch on iOS and Android.",
+    excerpt:
+      "Square Enix has shown the first footage of Dragon Quest RPG The Cursed Tree and the Chosen Isle, and the trailer answers the big questions: a closed beta starts in December, and the game is coming in 2027.",
+    date: "2026-11-10",
+    category: "Gaming",
+    sections: [
+      { type: "p", text: "Square Enix has shown Dragon Quest RPG The Cursed Tree and the Chosen Isle in motion. The announcement trailer premiered on Tuesday, November 10, 2026, at 11:00 AM UTC, a day after the game was revealed for iOS and Android. The two-minute video shows turn-based battles, monster allies, base building and cooking, and it ends with the news players wanted most: a closed beta with sign-ups open now, and a launch window of 2027." },
+      { type: "h2", text: "Dragon Quest RPG The Cursed Tree and the Chosen Isle Trailer: What the First Footage Shows" },
+      { type: "p", text: "The trailer opens on a bright, colourful 3D world seen from above, and it keeps moving: a party walks through a desert toward a stepped-pyramid temple, crosses a wooden bridge in a mine, and rides a log raft down a castle moat. There is no voiceover, only orchestral music, so the images do the talking: green fields, blue skies, stone ruins, and a giant glowing tree over a festival town." },
+      { type: "p", text: "Battles are turn-based and shown from the side, with new systems on top. A turn-order bar runs across the screen, and the trailer names three mechanics: Fast Strike skills, Follow-Up Strike, and Pep Powers. Damage numbers pop up as attacks land, against robotic hunter mechs, hammer-wielding monsters, a green slime, and a winged snake. It is a traditional command-based battle system, with a few fresh tactical twists." },
+      { type: "h2", text: "The Story: Monbelusha, Zaahl and the Cursed Tree" },
+      { type: "p", text: "The story, as laid out on the official website, starts high above the world on the floating isle of Monbelusha, where the annual Ringing Feast is under way. As the people offer their prayers, disaster strikes: a fiend named Zaahl corrupts Yggdrasil into Grimvein, a cursed tree spreading despair across the land. Monbelusha begins to crumble, and a boy plummets toward the world below. The Goddess Belusha entrusts him with a single mysterious branch, and he must take up his calling as Warden of the World Tree and set out to save the world. The trailer sketches the same story in images: a cloaked boy above ruined steps, hands holding a glowing green sprout, and a hooded villain with a blue-orb staff in a lightning-lit cave." },
+      { type: "h2", text: "The Party: Heroes, Monster Allies and a Talking Suit of Armour" },
+      { type: "p", text: "The hero is a brown-haired boy in a blue cloak and tunic, carrying a sword and shield, and Square Enix has not yet given his name. He is joined by Etica, a blue-haired girl who fights with a staff, and Geowain, an armoured knight whose shield is emblazoned with a slime. The fourth party member is a monster ally, a winged snake called Kim Myra, and the party screen shows two more monster allies in reserve, a black shadow creature and a brown tree-stump monster, suggesting monster recruiting matters here. The screen also shows levels, hit points and magic points for each member, with options to manage equipment and switch the party around. A living suit of armour named Simão adds some humour." },
+      { type: "h2", text: "Home Base and Cooking: More Than Battles" },
+      { type: "p", text: "Fighting is only part of the game. The trailer shows the player building up a home base as the adventure unfolds, and cooking. At a place called Zeunie's Eatery, the player picks allies to dine with and cooks dishes such as Seared Steak, with a cooking time and a list of required materials." },
+      { type: "h2", text: "Dragon Quest RPG Closed Beta: Dates, Testers and How to Apply" },
+      { type: "p", text: "The biggest news in the trailer is the closed beta test. Applications opened on November 10, 2026, the day the trailer premiered, and close on Monday, November 23, 2026, at 2:59 PM UTC. Testing runs from Tuesday, December 8 to Tuesday, December 15, 2026, and Square Enix will take 25,000 testers, chosen by lottery if oversubscribed. Results will be notified on Friday, December 4, 2026. The beta is 18 and over, runs on iOS through TestFlight, and progress will not carry over to the full release." },
+      { type: "list", items: [
+        "Applications: November 10 to November 23, 2026, closing at 2:59 PM UTC.",
+        "Testing period: December 8 to December 15, 2026, with 25,000 places by lottery.",
+        "Results notified December 4, 2026; players must be 18 or over.",
+        "iOS through TestFlight, and Android; beta progress will not transfer.",
+        "Recommended devices: iPhone 14 or newer on iOS, or a Snapdragon 8 Gen 2 phone on Android."
+      ] },
+      { type: "h2", text: "Release Date, Price and Platforms" },
+      { type: "p", text: "There is still no exact release date. The official website says the game is coming in 2027, and the trailer itself shows no date at all. What is confirmed is the price: the game will be free to play, with in-app purchases available. It is coming to iOS and Android only, with no console or PC version announced, and it will support Japanese, English, Traditional Chinese and Korean. Armor Project and Bird Studio are credited alongside Square Enix. The Dragon Quest I and II HD-2D Remake is out now, and Dragon Quest VII Reimagined reaches consoles and PC on February 5, 2026." },
+      { type: "faq", items: [
+        { q: "When did the Dragon Quest RPG trailer premiere?", a: "It premiered on Tuesday, November 10, 2026, at 11:00 AM UTC (4:30 PM IST) on Square Enix's YouTube channel, a day after the game was announced for iOS and Android." },
+        { q: "When is the Dragon Quest RPG closed beta test?", a: "Applications run November 10 to November 23, 2026, closing at 2:59 PM UTC, and testing runs December 8 to December 15, 2026. There are 25,000 places by lottery, with results on December 4, 2026." },
+        { q: "When is Dragon Quest RPG The Cursed Tree and the Chosen Isle coming out?", a: "Square Enix says the game is coming in 2027. No exact release date has been announced yet, and the trailer itself shows no date." },
+        { q: "Is Dragon Quest RPG The Cursed Tree and the Chosen Isle free to play?", a: "Yes. The official website lists it as free to play, with in-app purchases available. It is coming to iOS and Android only, with no console or PC version announced." }
+      ] },
+      { type: "p", text: "The trailer is short, but it does its job: a Dragon Quest game that looks and plays like Dragon Quest, with new ideas of its own. The closed beta is the next milestone, and with 25,000 places up for grabs and applications closing on November 23, anyone who wants an early look should not wait to apply." }
+    ],
+  },
+{
     slug: "aaryavir-sehwag-160-u19-asia-cup-uae-kohli-way-november-2026",
     image: "https://images.indianexpress.com/2026/11/aaryavir-sehwag.jpg",
     imageAlt: "Aaryavir Sehwag batting for India U19 against UAE in the U19 Asia Cup 2026 (photo: The Indian Express)",
