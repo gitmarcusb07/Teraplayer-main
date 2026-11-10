@@ -30,6 +30,49 @@
 
 export const posts = [
 {
+    slug: "aaryavir-sehwag-160-u19-asia-cup-uae-kohli-way-november-2026",
+    image: "https://images.indianexpress.com/2026/11/aaryavir-sehwag.jpg",
+    imageAlt: "Aaryavir Sehwag batting for India U19 against UAE in the U19 Asia Cup 2026 (photo: The Indian Express)",
+    title: "Aaryavir Sehwag 160 vs UAE: Maiden U19 Asia Cup Century as 'Kohli Way' Clip Goes Viral",
+    description:
+      "Aaryavir Sehwag smashed 160 off 168 balls for India U19 against UAE in the Asia Cup, and his viral 'Kohli way' interview clip is winning fans over.",
+    excerpt:
+      "Aaryavir Sehwag announced himself with a maiden Youth ODI century, smashing 160 off 168 balls against UAE in a must-win U19 Asia Cup clash as his viral 'Kohli way' interview won over fans.",
+    date: "2026-11-10",
+    category: "Sports",
+    sections: [
+      { type: "p", text: "Aaryavir Sehwag has announced himself on the big stage in the most Sehwag way possible, and then some. The India U19 opener smashed a maiden Youth ODI century, a blistering 160 off 168 balls against the United Arab Emirates in the U19 Asia Cup 2026 on Tuesday, November 10, 2026, and within hours his pre-tournament interview was going viral. In that clip, the son of Virender Sehwag says he does not want to play only the Sehwag way, he wants to play the Kohli way too, and his 160 at the Al Amerat Cricket Ground in Oman proved both instincts at once: fearless like his father, and built on patience and timing like his hero Virat Kohli." },
+      { type: "h2", text: "Aaryavir Sehwag 160: How the Innings Unfolded" },
+      { type: "p", text: "India were put in to bat after UAE won the toss, and Aaryavir began in a way nobody expected from a Sehwag. He took 14 deliveries to get off the mark, a cautious start that showed he was playing the situation rather than the surname. Once he was in, the tempo changed. He brought up his fifty off 69 balls with a six, the kind of milestone-clearing maximum his father made famous, and reached his maiden Youth ODI century off 131 balls with a single into the deep." },
+      { type: "p", text: "The second half of the innings was pure acceleration. Aaryavir hit left-arm wrist spinner Uddish Suri for two sixes and two fours in the 37th over, crossed 150 with a towering six over long-on off Noorullah Ayobi, and was dismissed in the 45th over, caught at mid-wicket off Naseem Khan with the total on 255, having struck 17 fours and seven sixes. India finished on 309 for seven, setting UAE 310 to win a match both teams needed." },
+      { type: "h2", text: "The 'Kohli Way' Video That Went Viral" },
+      { type: "p", text: "The knock landed even harder because of a clip recorded before the tournament. In a promotional video for the U19 Asia Cup, Aaryavir was asked about following in his father's footsteps, and his answer spread across social media within hours of the century. 'I don't want to only play the Sehwag way, I want to play the Kohli way,' he said, adding that he is a huge Virat Kohli fan who loves taking the attack. The line captures exactly what his 160 looked like: his father's aggression, shaped by Kohli's discipline." },
+      { type: "p", text: "Fans picked the clip up straight after the century, and it became the second storyline of the day. For a young batter in his first major tournament, it was a statement of intent as much as a batting performance: he is proud of the name on his back, but he wants to be judged on his own game." },
+      { type: "h2", text: "Aaryavir Sehwag Joins Shubman Gill in the Record Books" },
+      { type: "p", text: "The numbers behind the 160 are serious. It was the highest individual score of the U19 Asia Cup so far, and it put Aaryavir alongside India captain Shubman Gill and Mayank Agarwal, with all three having scored 160 at under-19 level. The record still belongs to Ambati Rayudu, who scored an unbeaten 177 against England U19 in Taunton in 2002, but Aaryavir is already in elite company." },
+      { type: "list", items: [
+        "160 runs off 168 balls, with 17 fours and seven sixes, against UAE at Al Amerat, Oman.",
+        "Maiden Youth ODI century, reached off 131 balls after a fifty off 69 balls.",
+        "193-run second-wicket partnership with VK Vineeth, who scored 66 off 67 balls.",
+        "Highest individual score of the U19 Asia Cup 2026 so far.",
+        "Joint fifth-highest individual score by an Indian in Youth ODIs, matching Shubman Gill and Mayank Agarwal.",
+        "252 runs at an average of 126.00 in three matches, after an unbeaten 70 against Nepal and 22 in his other outing."
+      ] },
+      { type: "h2", text: "Why This Was a Must-Win Game for India U19" },
+      { type: "p", text: "The context made the innings matter even more. India came into the UAE game needing a win after a three-wicket defeat to Pakistan, a game in which Arjun Rajput scored a century but India were bowled out for 208 and Pakistan chased the target down through Hamza Zahoor's match-winning hundred. With India and UAE both fighting for a qualification spot, the stakes were as high as they get in group-stage cricket, and Aaryavir's innings gave India the platform they needed after an early wicket." },
+      { type: "h2", text: "What Comes Next for Aaryavir Sehwag" },
+      { type: "p", text: "The century does not change that Aaryavir is still at the start of his career, but it changes how quickly people will watch him now. Two fifty-plus scores and a 160 in three tournament matches is the kind of start that gets a young batter noticed well beyond age-group cricket, and the way he built this innings, patient at the start and brutal at the end, suggests there is more to his game than the famous surname. If India go deep in this U19 Asia Cup, expect his name to be at the centre of it." },
+      { type: "faq", items: [
+        { q: "How many runs did Aaryavir Sehwag score against UAE?", a: "Aaryavir Sehwag scored 160 off 168 balls, with 17 fours and seven sixes, in India U19's Asia Cup 2026 group match against UAE on November 10, 2026." },
+        { q: "What did Aaryavir Sehwag say about Virat Kohli?", a: "In a pre-tournament promotional video, Aaryavir said he does not want to play only the Sehwag way and wants to play the Kohli way too, calling himself a huge Virat Kohli fan who loves taking the attack." },
+        { q: "Is 160 Aaryavir Sehwag's highest score in youth cricket?", a: "Yes, the 160 against UAE is his maiden Youth ODI century and the highest individual score of the U19 Asia Cup 2026 so far, matching the 160s of Shubman Gill and Mayank Agarwal at under-19 level." },
+        { q: "What was India's total against UAE?", a: "India U19 finished on 309 for seven in 50 overs, setting UAE a target of 310 to win. Aaryavir's 160 anchored the innings, with VK Vineeth scoring 66 in a 193-run second-wicket partnership." },
+        { q: "Who is Aaryavir Sehwag?", a: "Aaryavir Sehwag is the son of former India opener Virender Sehwag and an opening batter for India U19. He scored an unbeaten 70 against Nepal earlier in the U19 Asia Cup 2026 before his 160 against UAE." }
+      ] },
+      { type: "p", text: "One innings does not make a career, but 160 in a must-win game, built the Kohli way and finished the Sehwag way, is hard to forget. The century is the headline, and the viral clip is why everyone is talking about it. If Aaryavir keeps batting like this, the conversation will not be about whose son he is for much longer." }
+    ],
+  },
+{
     slug: "john-wick-game-everything-we-know-saber-interactive-keanu-reeves",
     image: "https://image.tmdb.org/t/p/w1280/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
     imageAlt: "Official poster for John Wick: Chapter 4 showing Keanu Reeves as John Wick (image: TMDB)",
