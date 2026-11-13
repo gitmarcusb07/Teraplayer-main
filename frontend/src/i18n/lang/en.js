@@ -135,6 +135,21 @@ export default {
   "explore.aboutTp": "About TeraPlayer",
   "explore.aboutUs": "About Us",
   "explore.contact": "Contact Us",
+  "explore.guideFix": "TeraBox link not opening? Fixes that work",
+  "explore.guidePhone": "Download a TeraBox video on your phone",
+
+  "seo.title": "What is a TeraBox downloader?",
+  "seo.intro":
+    "A TeraBox downloader is a web tool that opens a TeraBox share link in your browser so you can watch the video or save the file without installing the TeraBox app. TeraPlayer is a free TeraBox video player and downloader: paste a public link, press Watch, and the video plays right in your browser. No account, no login, and nothing to install.",
+  "seo.watchTitle": "Watch a TeraBox video online",
+  "seo.watchBody":
+    "When someone sends you a TeraBox link, you usually need the app to watch it. TeraPlayer plays the video in your browser on Android, iPhone, iPad, PC, or tablet, in the best quality the owner shared. If the share includes a folder, you can browse it and open each video the same way. Password-protected shares open with the password set by the owner.",
+  "seo.fixTitle": "TeraBox link not working?",
+  "seo.fixBody":
+    "If a link will not open or the video keeps buffering, the cause is usually small: an incomplete link, an expired share, a weak connection, or a browser extension blocking playback. Our help center walks through the fixes in order.",
+  "seo.phoneTitle": "Download a TeraBox video on your phone",
+  "seo.phoneBody":
+    "On a phone, open TeraPlayer in Chrome or Safari, paste the link, press Watch, and use the download option if the share allows it. Android downloads usually go to Downloads; iPhone downloads go to the Files app.",
 
   "homefoot.tag": "Free to use — no account required",
   "homefoot.note": "Only supports public TeraBox links",

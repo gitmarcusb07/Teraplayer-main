@@ -19,10 +19,10 @@ export default function BlogList() {
     <div className="min-h-screen bg-void">
       <Header />
       <Seo
-        title="Blog - TeraPlayer"
+        title="TeraBox Guides & Trending News - TeraPlayer Blog"
         description="Trending guides and news from TeraPlayer: TeraBox, tech, gaming, cinema and pop culture — watch videos without the app, fix links that will not open, and download on your phone, step by step."
         path="/blog"
-        ogTitle="Blog - TeraPlayer"
+        ogTitle="TeraBox Guides & Trending News - TeraPlayer Blog"
         ogDescription="Trending guides and news from TeraPlayer: TeraBox, tech, gaming, cinema and pop culture — watch videos without the app, fix links that will not open, and download on your phone, step by step."
       />
 

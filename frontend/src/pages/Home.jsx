@@ -910,6 +910,54 @@ export default function Home() {
         </section>
 
         <section
+          aria-labelledby="terabox-downloader-heading"
+          className="mx-auto mt-24 w-full max-w-4xl px-4 sm:px-6"
+        >
+          <div className="mb-8 text-center">
+            <h2
+              id="terabox-downloader-heading"
+              className="mb-4 text-2xl font-bold text-slate-900 sm:text-3xl"
+            >
+              {t("seo.title")}
+            </h2>
+            <p className="mx-auto max-w-2xl text-slate-600">{t("seo.intro")}</p>
+          </div>
+
+          <div className="space-y-8">
+            <div>
+              <h3 className="mb-2 text-lg font-bold text-slate-900 sm:text-xl">
+                {t("seo.watchTitle")}
+              </h3>
+              <p className="text-slate-600">{t("seo.watchBody")}</p>
+            </div>
+            <div>
+              <h3 className="mb-2 text-lg font-bold text-slate-900 sm:text-xl">
+                {t("seo.fixTitle")}
+              </h3>
+              <p className="text-slate-600">{t("seo.fixBody")}</p>
+              <Link
+                to="/blog/terabox-link-not-opening-video-not-playing-fixes"
+                className="mt-2 inline-block font-medium text-primary underline underline-offset-2"
+              >
+                {t("explore.guideFix")}
+              </Link>
+            </div>
+            <div>
+              <h3 className="mb-2 text-lg font-bold text-slate-900 sm:text-xl">
+                {t("seo.phoneTitle")}
+              </h3>
+              <p className="text-slate-600">{t("seo.phoneBody")}</p>
+              <Link
+                to="/blog/download-terabox-video-on-phone-step-by-step"
+                className="mt-2 inline-block font-medium text-primary underline underline-offset-2"
+              >
+                {t("explore.guidePhone")}
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section
           aria-labelledby="terabox-guides-heading"
           className="mx-auto mb-24 mt-24 w-full max-w-4xl px-4 sm:px-6"
         >
@@ -926,6 +974,24 @@ export default function Home() {
           </div>
 
           <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+            <li>
+              <Link
+                to="/blog/terabox-link-not-opening-video-not-playing-fixes"
+                className="ds-guide-link text-muted-foreground"
+              >
+                <HelpCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <span>{t("explore.guideFix")}</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blog/download-terabox-video-on-phone-step-by-step"
+                className="ds-guide-link text-muted-foreground"
+              >
+                <HelpCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <span>{t("explore.guidePhone")}</span>
+              </Link>
+            </li>
             <li>
               <Link
                 to="/help-center"

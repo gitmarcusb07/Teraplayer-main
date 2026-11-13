@@ -12,6 +12,7 @@ function Seo({
   imageAlt,
   ogTitle,
   ogDescription,
+  ogType = "website",
   twitterTitle,
   twitterDescription,
   robots,
@@ -31,7 +32,7 @@ function Seo({
       {robots ? <meta name="robots" content={robots} /> : null}
       <link rel="canonical" href={canonical} />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:title" content={finalOgTitle} />
       <meta property="og:description" content={finalOgDescription} />
       <meta property="og:url" content={canonical} />

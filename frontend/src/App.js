@@ -330,6 +330,14 @@ function SiteMeta() {
           applicationCategory: "MultimediaApplication",
           operatingSystem: "All",
           browserRequirements: "Requires JavaScript",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          featureList: [
+            "Watch TeraBox videos online without the app",
+            "Download TeraBox videos without a TeraBox login",
+            "Open public TeraBox links and shared folders in the browser",
+            "Choose video quality before watching or downloading",
+            "Open password-protected TeraBox shares with the share password",
+          ],
           description: "Free online TeraBox video player and downloader.",
         })}
       </script>

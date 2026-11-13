@@ -2,45 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.teraplayer.in/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/help-center</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/about</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/contact</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/privacy</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/terms</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/terabox-link-not-opening-video-not-playing-fixes</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/download-terabox-video-on-phone-step-by-step</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/india-us-trade-deal-tariff-advantage-us-assurance-november-2026</loc>
@@ -98,6 +110,9 @@
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/cyclone-murasu-landfall-completed-weakening-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/cyclone-murasu-landfall-ongole-november-3-2026</loc>
@@ -111,7 +126,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.teraplayer.in/blog/delhi-aqi-today-very-poor-first-time-season-grap-stage-2-november-2-2026</loc>
     <lastmod>2026-11-02</lastmod>
@@ -370,80 +384,155 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/supreme-court-green-crackers-delhi-ncr-diwali-2026-timings-rules-november-2-2026</loc>
-    </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/kimi-antonelli-youngest-f1-world-champion-mexico-grand-prix-november-2-2026</loc>
-    </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/europe-supermarket-fridge-cyberattack-november-2-2026</loc>
-    </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/hpcl-vizag-refinery-fire-visakhapatnam-november-3-2026</loc>
-    </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/supreme-court-california-ballots-trump-bid-rejected-november-3-2026</loc>
-    </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/lebron-james-wine-sip-76ers-fan-troy-clemons-november-3-2026</loc>
-    </url>
-    <url>
-      <loc>https://www.teraplayer.in/blog/msv-al-jusufi-oman-attack-indian-sailor-killed-november-3-2026</loc>
-    </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/supreme-court-green-crackers-delhi-ncr-diwali-2026-timings-rules-november-2-2026</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/kimi-antonelli-youngest-f1-world-champion-mexico-grand-prix-november-2-2026</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/europe-supermarket-fridge-cyberattack-november-2-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/hpcl-vizag-refinery-fire-visakhapatnam-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/supreme-court-california-ballots-trump-bid-rejected-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/lebron-james-wine-sip-76ers-fan-troy-clemons-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.teraplayer.in/blog/msv-al-jusufi-oman-attack-indian-sailor-killed-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.teraplayer.in/blog/supreme-court-delhi-firecrackers-illegal-sale-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/acp-manasvi-vashishtha-suspended-delhi-police-protest-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/us-midterm-elections-2026-voting-today-house-senate-what-is-at-stake</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/ramayana-part-3-ranbir-kapoor-namit-malhotra-hint-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/sachin-tendulkar-invests-hitwicket-metasports-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/sbi-q2-fy27-results-net-profit-rs-23038-crore-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/europe-bomb-threats-four-flights-poland-spain-bulgaria-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/gta-6-preload-november-10-212gb-file-size-rockstar-november-3-2026</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/glenn-maxwell-retirement-international-cricket-australia-november-3-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/salman-khan-teri-sexy-beauty-song-maatrubhumi-november-4-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/us-midterm-elections-2026-results-democrats-win-house-senate-undecided</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/ramayana-part-2-postponed-2028-namit-malhotra-confirms-november-4-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/democrats-win-us-senate-2026-midterms-senate-control-flips</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/prashant-bhushan-fir-doctored-lavrov-video-delhi-police</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/mukesh-ambani-asias-richest-person-reliance-rally-november-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/india-vs-new-zealand-1st-odi-result-kohli-74-auckland-november-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/agniveer-two-year-extension-second-tour-duty-cabinet-november-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/rahul-gandhi-bhagwant-mann-alcohol-remark-insaaf-rally-sangrur-november-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/munna-bhai-3-farhad-samji-script-rajkumar-hirani-2027-shoot</loc>
@@ -459,48 +548,93 @@
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/bgmi-air-india-launch-date-december-10-2026-closed-beta</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/nasa-swift-telescope-falls-earth-indonesia-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/telangana-bethupalli-boats-capsize-sdrf-missing-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/us-sanctions-india-couple-iran-shadow-fleet-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/india-social-media-safe-harbour-section-79-proposal-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/bethupalli-all-11-rescued-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/delhi-chawri-bazar-building-collapse-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/zelda-ocarina-of-time-remake-switch-2-release-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/strait-of-hormuz-tankers-tugboat-fire-mine-strike-november-5-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/ntt-docomo-outage-japan-unauthorized-access-november-5-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/jio-rs-15-unlimited-5g-data-pack-24-hour-validity-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/ntt-docomo-no-cyberattack-5g-sa-outage-update-november-5-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/chatgpt-images-2-6-gif-creation-faster-november-5-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/ramayana-part-1-release-day-box-office-reviews-november-5-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/jailer-2-ott-release-date-november-12-prime-video-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/motorola-signature-27-launched-price-specs-november-5-2026</loc>
@@ -528,6 +662,9 @@
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/india-beat-japan-4-1-asian-champions-trophy-final-november-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/cristiano-ronaldo-retirement-portugal-november-2026</loc>
@@ -537,9 +674,15 @@
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/gavin-newsom-commutes-548-california-death-sentences-november-2026</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/gta-6-new-screenshots-39-rockstar-launch-gallery-november-2026</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/apple-first-touchscreen-macbook-pro-launch-november-6-2026</loc>
@@ -615,6 +758,9 @@
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/godzilla-minus-zero-box-office-release-november-2026</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.teraplayer.in/blog/n7-day-2026-mass-effect-fans-ea-merch-backlash-bioware-shutdown</loc>

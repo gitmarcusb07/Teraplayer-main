@@ -96,6 +96,43 @@ export default function BlogPost() {
     return <NotFound />;
   }
 
+  const postUrl = `https://www.teraplayer.in/blog/${post.slug}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    ...(post.image ? { image: post.image } : {}),
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: "TeraPlayer",
+      url: "https://www.teraplayer.in",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "TeraPlayer",
+      url: "https://www.teraplayer.in",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+  };
+  const faqSection = post.sections.find((section) => section.type === "faq");
+  const faqSchema = faqSection
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqSection.items.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      }
+    : null;
+
   return (
     <div className="min-h-screen bg-void">
       <Header />
@@ -105,10 +142,19 @@ export default function BlogPost() {
         path={`/blog/${post.slug}`}
         ogTitle={`${post.title} - TeraPlayer`}
         ogDescription={post.description}
+        ogType="article"
         image={post.image}
         imageAlt={post.imageAlt}
       >
         <meta property="article:published_time" content={post.date} />
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Seo>
 
       <main>
@@ -166,7 +212,7 @@ export default function BlogPost() {
           {/* CTA back to the player — same pattern as the About page CTA. */}
           <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-border bg-surface-raised p-6 text-center sm:p-7">
             <h2 className="font-display font-bold text-xl tracking-tight sm:text-2xl">
-              Try it now
+              Open your TeraBox link in the player
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
               If you have a public TeraBox link ready, paste it into the player
