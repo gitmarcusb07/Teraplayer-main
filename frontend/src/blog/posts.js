@@ -79,7 +79,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "In most cases, the problem is small and fixable. This guide walks through the most common causes, in the order you should check them.",
+        text: "In most cases, the problem is small and fixable. If your TeraBox link is not opening, this guide walks through the most common causes, in the order you should check them.",
       },
       {
         type: "h2",
@@ -99,7 +99,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Finally, check for a password-protected share. If the player asks for a password, you will need the correct one from the owner. There is no safe way around a password set by the file owner.",
+        text: "Finally, check for a password-protected share. If the share is password-protected, you will need the correct password from the owner. There is no safe way around a password set by the file owner.",
       },
       {
         type: "h2",
@@ -139,7 +139,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Clearing the cache for the player site can help, especially if the same link worked before but now fails. You can do this from Settings, under Privacy or Browsing Data. Ad blockers and strict privacy extensions can also block a player, so try turning them off for the player site, or try a private window. On a phone, also check Data Saver or Low Data Mode.",
+        text: "Clearing the cache for the player site can help, especially if the same link worked before but now fails. You can do this in your browser settings, under Privacy, Browsing Data, or Site Settings. Ad blockers and strict privacy extensions can also block a player, so try turning them off for the player site, or try a private window. On a phone, also check Data Saver or Low Data Mode.",
       },
       {
         type: "h2",
@@ -147,7 +147,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Sometimes the video is playing, but you cannot tell. Check the volume, the iPhone silent switch, and any Bluetooth audio device. If the link still fails on your phone, try it on a computer or another phone. If it works there, the problem is with the first device. If it fails everywhere, the link itself is the likely problem.",
+        text: "Sometimes the video is playing, but you cannot tell. Check the volume, silent mode on iPhone, and any Bluetooth audio device. If the link still fails on your phone, try it on a computer or another phone. If it works there, the problem is with the first device. If it fails everywhere, the link itself is the likely problem.",
       },
       {
         type: "p",
@@ -170,7 +170,7 @@ export const posts = [
           },
           {
             q: "Why does the video load but keep buffering?",
-            a: "Buffering usually means a slow or unstable connection, or a large file. Pause briefly to let it load, choose a lower quality option, or switch to a stronger connection.",
+            a: "Buffering usually means a slow or unstable connection, or a large file. Pause briefly to let it load, choose a lower quality option if one is available, or switch to a stronger connection.",
           },
           {
             q: "Do I need the TeraBox app for the link to work?",
@@ -236,7 +236,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Paste the link and press Watch. This previews the file, so you can confirm it is the video you expected before downloading.",
+        text: "This previews the file, so you can confirm it is the video you expected before downloading.",
       },
       {
         type: "h3",
@@ -244,7 +244,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Once the file has loaded, look for a Download button near the player. If none appears, the owner may have set the share to view-only, or the file type may not support browser download.",
+        text: "Once the file has loaded, look for a Download button near the player. If none appears, download may not be available for that file or file type. Refresh the page once, and if it still does not appear, ask the owner to share the file another way.",
       },
       {
         type: "h3",
@@ -276,7 +276,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "On Android, use Chrome: copy the link, open https://teraplayer.in, paste it, press Watch, tap Download, and open the finished file from Downloads or your Gallery. If Chrome blocks it, tap Keep or Allow and check that Chrome has storage permission.",
+        text: "On Android, use Chrome: copy the link, open https://teraplayer.in, paste it, press Watch, tap Download, and open the finished file from Downloads or your Gallery. If Chrome warns about the file, tap Keep or Allow; on older Android versions, also check that Chrome has storage permission.",
       },
       {
         type: "p",
@@ -284,7 +284,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Some shares contain a folder. You may see an option to download it as a ZIP file. Tap it in Files to unzip it, then play the videos inside.",
+        text: "Some shares contain a folder. Open each video in the folder and download it the same way.",
       },
       {
         type: "h2",
@@ -292,7 +292,7 @@ export const posts = [
       },
       {
         type: "p",
-        text: "Try these fixes in order: re-copy the full link; refresh the page; try a different browser; free up storage if your phone is full; switch to Wi-Fi for large files; turn off Data Saver or Low Data Mode for a test; and check that your browser has permission to save files. For large files, keep your phone charged and do not clear browser data during the download. If the download option never appears, the share may be view-only, so ask the owner whether downloading is allowed.",
+        text: "Try these fixes in order: re-copy the full link; refresh the page; try a different browser; free up storage if your phone is full; switch to Wi-Fi for large files; turn off Data Saver or Low Data Mode for a test; and check that your browser has permission to save files. For large files, keep your phone charged and do not clear browser data during the download. If the download option never appears, download may not be available for that file. If the video will not load at all, see our guide to fixing a TeraBox link that is not opening.",
       },
       {
         type: "h2",
@@ -315,7 +315,7 @@ export const posts = [
           },
           {
             q: "Why is there no download button?",
-            a: "The share may be set to view-only, or the file type may not support browser download. Ask the owner if downloading is allowed.",
+            a: "Download may not be available for that file or file type. Refresh the page once, then ask the owner to share the file another way if it still does not appear.",
           },
           {
             q: "Can I watch the video offline after downloading?",
